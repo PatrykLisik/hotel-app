@@ -1,0 +1,50 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor użytkownik as cust
+actor "zalogowany użytkownik" as logged_cust
+logged_cust -|> cust
+
+actor administrator
+actor manager
+actor recepcjonista
+
+rectangle "hotel website/app"{
+  cust -- (zobacz pokoje)
+  cust -- (zobacz "o hotelu")
+  (zobacz "o hotelu") <.- (historia budynku) : extend
+  (zobacz "o hotelu") <.- (pobliskie aktywności) : extend
+  (zobacz "o hotelu") <.- (godziny otwarcia recepcji) : extend
+  cust -- (zaloguj)
+  cust -- (utwórz konto)
+  (utwórz konto) -.> ( dane osobowe CRUD ) : include
+  (utwórz konto) -.> (email) : include
+  (zobacz pokoje) <.- (wybierz pokój) : extends
+  (zobacz pokoje) <.- (filtruj po typie pokoju) : extends
+  (zobacz pokoje) <.- (filtruj po wielkości pokojue) : extends
+  (wybierz pokój) <.- (zobacz więcej zdjęć) : extends
+  (wybierz pokój) <.- (metraż) : extends
+  (wybierz pokój) <.- (zobacz widok z okna) : extends
+  (wybierz pokój) <.- (lodówka? ) : extends
+  (lodówka? ) <.- (Darmowe napoje) : extends
+  (wybierz pokój) <.- (Czy ma balkon?) : extends
+  (wybierz pokój) <.- (Czy ma czajnik?) : extends
+
+
+  logged_cust -- (rezerwacja pokoju CRUD)
+  logged_cust -- (wcześniejsze rezerwacje)
+  (rezerwuj pokój) -.> (wybierz pokój) : include
+  (checkout and pay) -.> (rezerwuj pokój): include
+  (rezerwuj pokój) <.- (przekaz opnię): extend
+
+  (rezerwacja pokoju CRUD)-- recepcjonista
+  (zobacz wszystkie rezerwacje) -- recepcjonista
+
+  (Pracownicy CRUD) -- administrator
+  (Pokoje CRUD) -- administrator
+
+  (Promocje CRUD) -- manager
+  (Ceny pokoi) -- manager
+
+}
+@enduml
