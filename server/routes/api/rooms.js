@@ -12,8 +12,8 @@ async function loadRoomsCollection() {
 
 //Get rooms 
 router.get("/", async (req, res) => {
-    const post = await loadRoomsCollection();
-    res.send(await post.find({}).toArray());
+    const rooms = await loadRoomsCollection();
+    res.send(await rooms.find({}).toArray());
 });
 
 //Add rooms
@@ -27,7 +27,13 @@ router.post("/", async (req, res) => {
 })
 
 //Delete rooms
-
+router.delete('/:id', async (req, res) => {
+    const rooms = await loadRoomsCollection();
+    await rooms.deleteOne({
+        _id: new mongodb.ObjectID(req.params.id)
+    });
+    res.status(200).send();
+})
 
 
 module.exports = router;
