@@ -17,6 +17,14 @@ router.get("/", async (req, res) => {
 });
 
 //Add rooms
+router.post("/", async (req, res) => {
+    const rooms = await loadRoomsCollection();
+    await rooms.insertOne({
+        text: req.body.text,
+        createdAt: new Date()
+    });
+    res.status(201).send();
+})
 
 //Delete rooms
 
