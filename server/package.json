@@ -4,7 +4,7 @@
   "description": "Hotel app in vue.js",
   "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint **/*.js",
+    "lint": "eslint \"./**/*.js\"",
     "start": "node src/index.js",
     "test": "echo \"no test specified\" && exit 0",
     "dev": "npm run lint && nodemon src/index.js"
