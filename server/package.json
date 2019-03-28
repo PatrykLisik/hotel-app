@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint **/*.js",
     "start": "node src/index.js",
-    "test": "npm run lint && echo \"no test specified\" && exit 0",
+    "test": "echo \"no test specified\" && exit 0",
     "dev": "npm run lint && nodemon src/index.js"
   },
   "repository": {
