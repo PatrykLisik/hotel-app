@@ -4,9 +4,9 @@
   "description": "Hotel app in vue.js",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "dev": "nodemon server/index.js"
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
