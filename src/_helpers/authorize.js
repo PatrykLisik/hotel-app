@@ -23,7 +23,7 @@ function authorize (roles = []) {
       if (roles.length && !roles.includes(req.user.role)) {
         // user's role is not authorized
         return res.status(401).json({
-          message: 'Unauthorized'
+          message: 'Insufficient permission, your role is' + req.user.role + ' expected roles are ' + roles
         })
       }
 

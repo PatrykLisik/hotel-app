@@ -27,7 +27,8 @@ async function authenticate ({
       ...userWithoutHash
     } = user.toObject()
     const token = jwt.sign({
-      sub: user.id
+      sub: user.id,
+      role: user.role
     }, config.secret)
     return {
       ...userWithoutHash,
