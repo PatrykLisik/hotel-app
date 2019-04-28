@@ -30,7 +30,9 @@
     "mongoose": "^5.4.20",
     "moongoose": "0.0.5",
     "morgan": "^1.9.1",
-    "rootpath": "^0.1.2"
+    "mysql2": "^1.6.5",
+    "rootpath": "^0.1.2",
+    "sequelize": "^5.7.6"
   },
   "devDependencies": {
     "eslint": "^5.15.3",
