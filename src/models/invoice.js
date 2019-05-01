@@ -17,6 +17,10 @@ module.exports = (sequelize, DataTypes) => {
     payment_method: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    state: {
+      type: DataTypes.ENUM,
+      values: ['paid', 'not paid']
     }
   })
 
