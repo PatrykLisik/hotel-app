@@ -28,6 +28,14 @@ module.exports = (sequelize, DataTypes) => {
         model: 'Rooms',
         key: 'id'
       }
+    },
+    invoice_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Invoices',
+        key: 'id'
+      }
     }
   })
 
