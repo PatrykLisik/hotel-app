@@ -1,8 +1,14 @@
 language: node_js
 node_js:
   - "node"
+install:
+  - npm install newman
 before_script:
- - npm install
+  - node --version
+  - npm --version
+  - node_modules/.bin/newman --version
+  - npm install
 script:
   - npm run lint
   - npm test
+   - node_modules/.bin/newman run tests/HotelAppApi.postman_collection.json -e tests/HoltelApp.postman_environment.json

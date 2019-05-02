@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "33a6dccb-272e-49c6-92d7-37c1e31e39f7",
+		"name": "HotelAppApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"item": [
+				{
+					"name": "Proper creation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05b099ef-6f99-4525-9979-aa3fedcc304b",
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.first_name).to.eql(\"Patryk\");",
+									"    pm.expect(jsonData.last_name).to.eql(\"Lisik\");",
+									"    pm.expect(jsonData.email).to.eql(\"aabaab@gmail.com\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\" : \"Patryk\",\n\t\"last_name\" : \"Lisik\",\n\t\"email\": \"aabaab@gmail.com\",\n\t\"password\" : \"12345789\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Short password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05b099ef-6f99-4525-9979-aa3fedcc304b",
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Response test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.error).to.eql(\"password must contains 8  to 128 characters\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\" : \"Patryk\",\n\t\"last_name\" : \"Lisik\",\n\t\"email\": \"aabaab@gmail.com\",\n\t\"password\" : \"12\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

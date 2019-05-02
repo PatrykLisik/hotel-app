@@ -9,8 +9,7 @@ module.exports = {
       password: Joi.string().min(8).max(128).required()
     })
     const {
-      error,
-      value
+      error
     } = Joi.validate(req.body, schema)
 
     if (error) {
