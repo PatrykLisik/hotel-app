@@ -11,4 +11,4 @@ before_script:
 script:
   - npm run lint
   - npm test
-   - node_modules/.bin/newman run tests/HotelAppApi.postman_collection.json -e tests/HoltelApp.postman_environment.json
+  - node_modules/.bin/newman run tests/HotelAppApi.postman_collection.json -e tests/HoltelApp.postman_environment.json
