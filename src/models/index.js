@@ -6,7 +6,7 @@ const db = {}
 
 const sequelize = new Sequelize({
   host: config.db.host,
-  port: config.db.port,
+  port: config.db.db_port,
   database: config.db.database,
   username: config.db.username,
   password: config.db.password,
