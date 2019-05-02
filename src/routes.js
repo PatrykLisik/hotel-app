@@ -6,5 +6,8 @@ module.exports = (app) => {
   })
 
   const userController = require('./Controllers/UserController')
-  app.post('/user', userController.register)
+  const userCreationPolicy = require('./policies/UserCreationPolicy')
+  app.post('/user',
+    userCreationPolicy.register,
+    userController.register)
 }
