@@ -4,4 +4,7 @@ module.exports = (app) => {
       message: 'test endpoint Hello World!'
     })
   })
+
+  const userController = require('./Controllers/UserController')
+  app.post('/user', userController.register)
 }
