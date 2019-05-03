@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-    bed_number: DataTypes.INTEGER,
+    bedNumber: DataTypes.INTEGER,
     teapot: DataTypes.BOOLEAN,
     tv: DataTypes.BOOLEAN,
     balcony: DataTypes.BOOLEAN,
