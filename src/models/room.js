@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   })
 
   Rooms.associate = (models) => {
-    Rooms.hasOne(models.Rooms_Equipment)
+    Rooms.hasOne(models.Room_Equipments)
   }
   return Rooms
 }

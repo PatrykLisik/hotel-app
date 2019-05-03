@@ -16,6 +16,7 @@ function hashPassword (user, options) {
       user.setDataValue('password', hash)
     })
 }
+
 module.exports = (sequelize, DataTypes) => {
   const Users = sequelize.define('Users', {
     id: {
@@ -46,6 +47,7 @@ module.exports = (sequelize, DataTypes) => {
     Users.belongsToMany(models.Roles, {
       through: 'User_Roles'
     })
+    Users.belongsTo(models.Contact_Forms)
   }
 
   return Users
