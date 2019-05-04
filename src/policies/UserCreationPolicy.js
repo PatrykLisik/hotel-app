@@ -3,8 +3,8 @@ const Joi = require('joi')
 module.exports = {
   register (req, res, next) {
     const schema = Joi.object().keys({
-      first_name: Joi.string().alphanum().min(3).max(25).required(),
-      last_name: Joi.string().alphanum().min(3).max(25).required(),
+      firstName: Joi.string().alphanum().min(3).max(25).required(),
+      lastName: Joi.string().alphanum().min(3).max(25).required(),
       email: Joi.string().email().required(),
       password: Joi.string().min(8).max(128).required()
     })
@@ -14,14 +14,14 @@ module.exports = {
 
     if (error) {
       switch (error.details[0].context.key) {
-        case 'first_name':
+        case 'firstName':
           res.status(400).send({
-            error: 'fist_name must be alphanumeric string of length 3 to 25'
+            error: 'firstName must be alphanumeric string of length 3 to 25'
           })
           break
-        case 'last_name':
+        case 'lastName':
           res.status(400).send({
-            error: 'last_name must be alphanumeric string of length 3 to 25'
+            error: 'lastName must be alphanumeric string of length 3 to 25'
           })
           break
         case 'email':

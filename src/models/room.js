@@ -1,29 +1,21 @@
+'use strict'
 module.exports = (sequelize, DataTypes) => {
-  const Rooms = sequelize.define('Rooms', {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
-    roomNumber: {
-      type: DataTypes.INTEGER,
-      unique: true
-    },
-    roomFloor: DataTypes.INTEGER,
-    type: DataTypes.STRING,
-    roomArea: DataTypes.FLOAT,
+  const Room = sequelize.define('Room', {
+    Number: DataTypes.INTEGER,
+    Floor: DataTypes.INTEGER,
+    PeopleNumber: DataTypes.INTEGER,
+    Type: DataTypes.STRING,
     cost: DataTypes.DECIMAL(10, 2),
-    equipment: {
+    roomEquipmentsId: {
       type: DataTypes.INTEGER,
       references: {
         model: 'RoomEquipments',
         key: 'id'
       }
     }
-  })
-
-  Rooms.associate = (models) => {
-    Rooms.hasOne(models.RoomEquipments)
+  }, {})
+  Room.associate = function (models) {
+    Room.hasOne(models.RoomEquipment)
   }
-  return Rooms
+  return Room
 }

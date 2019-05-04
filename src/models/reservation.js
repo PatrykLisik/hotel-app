@@ -1,10 +1,8 @@
+'use strict'
 module.exports = (sequelize, DataTypes) => {
-  const Reservation = sequelize.define('Reservations', {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
+  const Reservation = sequelize.define('Reservation', {
+    StartDate: DataTypes.DATEONLY,
+    EndDate: DataTypes.DATEONLY,
     clientId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -12,38 +10,10 @@ module.exports = (sequelize, DataTypes) => {
         model: 'Users',
         key: 'id'
       }
-    },
-    startDate: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
-    },
-    endDate: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
-    },
-    roomId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Rooms',
-        key: 'id'
-      }
-    },
-    invoiceId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Invoices',
-        key: 'id'
-      }
     }
-  })
-
-  Reservation.associate = (models) => {
-    Reservation.hasOne(models.Users)
-  }
-  Reservation.associate = (models) => {
-    Reservation.hasOne(models.Rooms)
+  }, {})
+  Reservation.associate = function (models) {
+    Reservation.hasOne(models.User)
   }
   return Reservation
 }
