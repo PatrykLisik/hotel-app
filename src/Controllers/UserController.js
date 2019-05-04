@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const config = require('../config/config')
 const {
   User,
-  Roles
+  UserRole
 } = require('../models')
 
 function jwtSignUser (user) {
@@ -14,7 +14,7 @@ function jwtSignUser (user) {
 module.exports = {
   async register (req, res) {
     try {
-      const userRole = await Roles.findOne({
+      const userRole = await UserRole.findOne({
         where: {
           name: config.default_role
         }
