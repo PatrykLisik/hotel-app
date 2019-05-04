@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Form = sequelize.define('Contact_Forms', {
+  const Form = sequelize.define('ContactForms', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,

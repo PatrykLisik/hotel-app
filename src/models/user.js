@@ -44,9 +44,7 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Users.associate = (models) => {
-    Users.belongsToMany(models.Roles, {
-      through: 'User_Roles'
-    })
+    Users.belongsTo(models.Roles)
     Users.belongsTo(models.Contact_Forms)
   }
 

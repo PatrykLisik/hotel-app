@@ -16,14 +16,14 @@ module.exports = (sequelize, DataTypes) => {
     equipment: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Room_Equipments',
+        model: 'RoomEquipments',
         key: 'id'
       }
     }
   })
 
   Rooms.associate = (models) => {
-    Rooms.hasOne(models.Room_Equipments)
+    Rooms.hasOne(models.RoomEquipments)
   }
   return Rooms
 }
