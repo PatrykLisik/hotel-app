@@ -26,4 +26,13 @@ module.exports = (app) => {
     roomController.getAll)
 
   app.post('/room', roomController.createOne)
+
+  // Reservation api
+  const reservationController = require('./Controllers/ReservationController')
+  app.post('/reservation',
+    reservationController.createOne)
+
+  app.get('/reservation/all', reservationController.getAll)
+
+  app.get('/reservation', reservationController.getOne)
 }
