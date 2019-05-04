@@ -1,3 +1,4 @@
+'use strict'
 const Promise = require('bluebird')
 const bcrypt = Promise.promisifyAll(require('bcrypt-nodejs'))
 const config = require('../config/config')
@@ -16,20 +17,11 @@ function hashPassword (user, options) {
       user.setDataValue('password', hash)
     })
 }
-
 module.exports = (sequelize, DataTypes) => {
-  const Users = sequelize.define('Users', {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
-    first_name: DataTypes.STRING,
-    last_name: DataTypes.STRING,
-    email: {
-      type: DataTypes.STRING,
-      unique: true
-    },
+  const User = sequelize.define('User', {
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
+    email: DataTypes.STRING,
     password: DataTypes.STRING
   }, {
     hooks: {
@@ -38,15 +30,11 @@ module.exports = (sequelize, DataTypes) => {
       beforeSave: hashPassword
     }
   })
-
-  Users.prototype.comparePassword = function (password) {
+  User.prototype.comparePassword = function (password) {
     return bcrypt.compareAsync(password, this.password)
   }
-
-  Users.associate = (models) => {
-    Users.belongsTo(models.Roles)
-    Users.belongsTo(models.Contact_Forms)
+  User.associate = function (models) {
+    // associations can be defined here
   }
-
-  return Users
+  return User
 }

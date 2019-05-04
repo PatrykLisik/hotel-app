@@ -1,7 +1,8 @@
 const jwt = require('jsonwebtoken')
 const config = require('../config/config')
 const {
-  Users
+  User,
+  Roles
 } = require('../models')
 
 function jwtSignUser (user) {
@@ -13,7 +14,13 @@ function jwtSignUser (user) {
 module.exports = {
   async register (req, res) {
     try {
-      const user = await Users.create(req.body)
+      const userRole = await Roles.findOne({
+        where: {
+          name: config.default_role
+        }
+      })
+      req.body['roleId'] = userRole.id
+      const user = await User.create(req.body)
       res.send(user.toJSON())
     } catch (err) {
       res.status(400).send({
@@ -25,7 +32,7 @@ module.exports = {
   async login (req, res) {
     try {
       const email = req.body.email
-      const user = await Users.findOne({
+      const user = await User.findOne({
         where: {
           email: email
         }
