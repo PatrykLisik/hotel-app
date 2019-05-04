@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint \"./**/*.js\"",
-    "start": "node src/index.js",
+    "start": "npm run sm && node src/index.js ",
     "test": "echo \"no test specified\" && exit 0",
-    "dev": "npm run lint && nodemon src/index.js"
+    "dev": "npm run lint && npm run sm && nodemon src/index.js ",
+    "migrate": "npx sequelize db:migrate",
+    "seed": "npx sequelize db:seed:all",
+    "sm": "npm run seed && npm run migrate"
   },
   "repository": {
     "type": "git",
