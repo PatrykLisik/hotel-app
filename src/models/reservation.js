@@ -2,10 +2,18 @@
 module.exports = (sequelize, DataTypes) => {
   const Reservation = sequelize.define('Reservation', {
     StartDate: DataTypes.DATEONLY,
-    EndDate: DataTypes.DATEONLY
+    EndDate: DataTypes.DATEONLY,
+    clientId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Users',
+        key: 'id'
+      }
+    }
   }, {})
   Reservation.associate = function (models) {
-    // associations can be defined here
+    Reservation.hasOne(models.User)
   }
   return Reservation
 }

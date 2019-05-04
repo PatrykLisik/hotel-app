@@ -5,10 +5,17 @@ module.exports = (sequelize, DataTypes) => {
     Floor: DataTypes.INTEGER,
     PeopleNumber: DataTypes.INTEGER,
     Type: DataTypes.STRING,
-    cost: DataTypes.DECIMAL(10, 2)
+    cost: DataTypes.DECIMAL(10, 2),
+    roomEquipmentsId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'RoomEquipments',
+        key: 'id'
+      }
+    }
   }, {})
   Room.associate = function (models) {
-    // associations can be defined here
+    Room.hasOne(models.RoomEquipment)
   }
   return Room
 }
