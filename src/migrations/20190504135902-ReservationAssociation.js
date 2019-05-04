@@ -10,7 +10,7 @@ module.exports = {
       Example:
      */
     return Promise.all([
-      queryInterface.addColumn('Reservations', 'RoomId', {
+      queryInterface.addColumn('Reservations', 'roomId', {
         type: Sequelize.INTEGER,
         references: {
           model: 'Rooms',
@@ -19,7 +19,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL'
       }),
-      queryInterface.addColumn('Reservations', 'ClientId', {
+      queryInterface.addColumn('Reservations', 'clientId', {
         type: Sequelize.INTEGER,
         references: {
           model: 'Users',
@@ -39,8 +39,8 @@ module.exports = {
       Example:
       */
     return Promise.all([
-      queryInterface.removeColumn('Reservations,', 'RoomId'),
-      queryInterface.removeColumn('Reservations,', 'ClientId')
+      queryInterface.removeColumn('Reservations,', 'roomId'),
+      queryInterface.removeColumn('Reservations,', 'clientId')
     ])
   }
 }

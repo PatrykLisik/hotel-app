@@ -19,11 +19,18 @@ function hashPassword (user, options) {
 }
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-    id: DataTypes.INTEGER,
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    roleId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Roles',
+        key: 'id'
+      }
+    }
   }, {
     hooks: {
       beforeCreate: hashPassword,
@@ -35,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     return bcrypt.compareAsync(password, this.password)
   }
   User.associate = function (models) {
-    // associations can be defined here
+    User.hasOne(models.UserRole)
   }
   return User
 }

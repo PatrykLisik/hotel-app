@@ -8,7 +8,7 @@ module.exports = {
 
       Example:
      */
-    return queryInterface.addColumn('Users', 'RoleId', {
+    return queryInterface.addColumn('Users', 'roleId', {
       type: Sequelize.INTEGER,
       references: {
         model: 'UserRoles',
@@ -26,6 +26,6 @@ module.exports = {
 
       Example:
       */
-    return queryInterface.removeColumn('Users,', 'RoleId')
+    return queryInterface.removeColumn('Users,', 'roleId')
   }
 }

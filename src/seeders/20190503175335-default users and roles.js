@@ -1,68 +1,71 @@
 'use strict'
 const {
-  Users,
-  Roles
+  User,
+  UserRole
 } = require('../models')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    queryInterface.bulkInsert('Roles', [{
+    await UserRole.bulkCreate([{
       name: 'Admin',
       CanViewAllUsers: true,
       CanCRUDRooms: true,
       CanViewAllReservations: true,
-      CanEditAllReservations: true
+      CanEditAllReservations: true,
+      CanAddRoles: true
     },
     {
       name: 'User',
       CanViewAllUsers: false,
       CanCRUDRooms: false,
       CanViewAllReservations: false,
-      CanEditAllReservations: false
+      CanEditAllReservations: false,
+      CanAddRoles: false
     },
     {
       name: 'Manager',
       CanViewAllUsers: false,
       CanCRUDRooms: true,
       CanViewAllReservations: true,
-      CanEditAllReservations: false
+      CanEditAllReservations: false,
+      CanAddRoles: false
     }
 
     ], {})
 
-    const adminRole = await Roles.findOne({
+    const adminRole = await UserRole.findOne({
       where: {
         name: 'Admin'
       }
     })
-    const managerRole = await Roles.findOne({
+    const managerRole = await UserRole.findOne({
       where: {
         name: 'Manager'
       }
     })
-    const userRole = await Roles.findOne({
+    const userRole = await UserRole.findOne({
       where: {
         name: 'User'
       }
     })
 
-    return Users.bulkCreate([{
-      first_name: 'user',
-      last_name: 'user',
+    return User.bulkCreate([{
+      firstName: 'user',
+      lastName: 'user',
       email: 'user@user',
       password: 'user',
       roleId: userRole.id
     },
     {
-      first_name: 'manager',
-      last_name: 'manager',
+      firstName: 'manager',
+      lastName: 'manager',
       email: 'manager@manager',
       password: 'manager',
       roleId: managerRole.id
     },
     {
-      first_name: 'admin',
-      last_name: 'admin',
+      firstName: 'admin',
+      lastName: 'admin',
       email: 'admin@admin',
       password: 'admin',
       roleId: adminRole.id
