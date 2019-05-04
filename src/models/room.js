@@ -1,6 +1,7 @@
 'use strict'
 module.exports = (sequelize, DataTypes) => {
   const Room = sequelize.define('Room', {
+    id: DataTypes.INTEGER,
     Number: DataTypes.INTEGER,
     Floor: DataTypes.INTEGER,
     PeopleNumber: DataTypes.INTEGER,
