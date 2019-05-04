@@ -10,6 +10,14 @@ module.exports = (sequelize, DataTypes) => {
         model: 'Users',
         key: 'id'
       }
+    },
+    InvoiceId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'Invoices',
+        key: 'id'
+      }
     }
   }, {})
   Reservation.associate = function (models) {
