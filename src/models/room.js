@@ -5,25 +5,25 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-    room_number: {
+    roomNumber: {
       type: DataTypes.INTEGER,
       unique: true
     },
-    room_floor: DataTypes.INTEGER,
+    roomFloor: DataTypes.INTEGER,
     type: DataTypes.STRING,
-    room_area: DataTypes.FLOAT,
+    roomArea: DataTypes.FLOAT,
     cost: DataTypes.DECIMAL(10, 2),
     equipment: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Room_Equipments',
+        model: 'RoomEquipments',
         key: 'id'
       }
     }
   })
 
   Rooms.associate = (models) => {
-    Rooms.hasOne(models.Rooms_Equipment)
+    Rooms.hasOne(models.RoomEquipments)
   }
   return Rooms
 }

@@ -1,23 +1,25 @@
 const fs = require('fs')
 const path = require('path')
 const Sequelize = require('sequelize')
-const config = require('../config/config')
+const basename = path.basename(__filename)
+const env = process.env.NODE_ENV || 'development'
+const config = require('../config/config')[env]
 const db = {}
 
-const sequelize = new Sequelize({
-  host: config.db.host,
-  port: config.db.db_port,
-  database: config.db.database,
-  username: config.db.username,
-  password: config.db.password,
-  dialect: config.db.dialect
-})
+let sequelize
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config)
+} else {
+  sequelize = new Sequelize(config.database, config.username, config.password, config)
+}
 
-// import every *.js file, except for this, in this directory
-fs.readdirSync(__dirname)
-  .filter((file) => file !== 'index.js')
-  .forEach((file) => {
-    const model = sequelize.import(path.join(__dirname, file))
+fs
+  .readdirSync(__dirname)
+  .filter(file => {
+    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js')
+  })
+  .forEach(file => {
+    const model = sequelize['import'](path.join(__dirname, file))
     db[model.name] = model
   })
 

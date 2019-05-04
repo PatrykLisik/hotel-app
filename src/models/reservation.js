@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-    client_id: {
+    clientId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -13,15 +13,15 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    start_date: {
+    startDate: {
       type: DataTypes.DATEONLY,
       allowNull: false
     },
-    end_date: {
+    endDate: {
       type: DataTypes.DATEONLY,
       allowNull: false
     },
-    room_id: {
+    roomId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    invoice_id: {
+    invoiceId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

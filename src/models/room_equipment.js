@@ -1,11 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
-  const RoomsEQ = sequelize.define('Room_Equipments', {
+  const RoomsEQ = sequelize.define('RoomEquipments', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
-    bed_number: DataTypes.INTEGER,
+    bedNumber: DataTypes.INTEGER,
     teapot: DataTypes.BOOLEAN,
     tv: DataTypes.BOOLEAN,
     balcony: DataTypes.BOOLEAN,
