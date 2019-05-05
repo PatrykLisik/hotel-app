@@ -39,8 +39,6 @@ module.exports = {
 
   async createOne (req, res) {
     try {
-      console.log(req.body)
-
       const OverlappingReservations = await Reservation.findAll({
         where: {
           roomId: req.body.roomId,
@@ -52,7 +50,7 @@ module.exports = {
           }
         }
       })
-      console.log(OverlappingReservations)
+
       if (OverlappingReservations && OverlappingReservations.length) {
         return res.status(400).send({
           error: 'reservation date overlaps with other reservations'
@@ -70,6 +68,30 @@ module.exports = {
         error: err
       })
     }
+  },
+
+  async update (req, res) {
+    Reservation.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(result => {
+      console.log(result)
+      if (result[0] === 1) {
+        res.send({
+          message: 'successful update'
+        })
+      } else {
+        res.status(400).send({
+          message: 'unsuccessful update'
+        })
+      }
+    }).catch(err => {
+      console.log(err)
+      res.status(400).send({
+        error: err
+      })
+    })
   }
 
 }

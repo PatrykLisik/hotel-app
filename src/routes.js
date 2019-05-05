@@ -35,4 +35,6 @@ module.exports = (app) => {
   app.get('/reservation/all', reservationController.getAll)
 
   app.get('/reservation', reservationController.getOne)
+
+  app.put('/reservation', reservationController.update)
 }
