@@ -51,6 +51,54 @@ module.exports = {
         error: err
       })
     }
+  },
+
+  async update (req, res) {
+    Room.update(req.body.update, {
+      where: {
+        id: req.body.id
+      }
+    }).then(result => {
+      console.log(result)
+      if (result[0] === 1) {
+        res.send({
+          message: 'successful update'
+        })
+      } else {
+        res.status(400).send({
+          message: 'unsuccessful update'
+        })
+      }
+    }).catch(err => {
+      console.log(err)
+      res.status(400).send({
+        error: err
+      })
+    })
+  },
+
+  async delete (req, res) {
+    Room.destroy({
+      where: {
+        id: req.body.id
+      }
+    }).then(result => {
+      console.log(result)
+      if (result === 1) {
+        res.send({
+          message: 'Room deleted successfully'
+        })
+      } else {
+        res.status(400).send({
+          message: 'unsuccessful deletion'
+        })
+      }
+    }).catch(err => {
+      console.log(err)
+      res.status(400).send({
+        error: err
+      })
+    })
   }
 
 }

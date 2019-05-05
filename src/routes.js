@@ -41,6 +41,14 @@ module.exports = (app) => {
     roomController.createOne
   )
 
+  app.put('/room',
+    roomController.update
+  )
+
+  app.del('/room',
+    roomController.delete
+  )
+
   // Reservation api
   const reservationController = require('./Controllers/ReservationController')
   app.post('/reservation',
