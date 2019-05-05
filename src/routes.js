@@ -11,32 +11,54 @@ module.exports = (app) => {
 
   app.post('/user',
     userCreationPolicy.register,
-    userController.register)
+    userController.register
+  )
 
   app.post('/login',
-    userController.login)
+    userController.login
+  )
+
+  app.put('/user',
+    userController.update
+  )
+
+  app.del('/user',
+    userController.delete
+  )
 
   // Room api
   const roomController = require('./Controllers/RoomController')
 
   app.get('/room',
-    roomController.getOne)
+    roomController.getOne
+  )
 
   app.get('/room/all',
-    roomController.getAll)
+    roomController.getAll
+  )
 
-  app.post('/room', roomController.createOne)
+  app.post('/room',
+    roomController.createOne
+  )
 
   // Reservation api
   const reservationController = require('./Controllers/ReservationController')
   app.post('/reservation',
     reservationController.createOne)
 
-  app.get('/reservation/all', reservationController.getAll)
+  app.get('/reservation/all',
+    reservationController.getAll
+  )
 
-  app.get('/reservation', reservationController.getOne)
+  app.get('/reservation',
+    reservationController.getOne
+  )
 
-  app.put('/reservation', reservationController.update)
+  app.put('/reservation',
+    reservationController.update
+  )
 
-  app.del('/reservation', reservationController.delete)
+  app.del('/reservation',
+    reservationController.delete
+  )
 }
