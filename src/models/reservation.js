@@ -28,9 +28,22 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   }, {})
+
   Reservation.associate = function (models) {
-    Reservation.hasOne(models.User)
-    Reservation.hasOne(models.Invoice)
+    Reservation.hasOne(models.User, {
+      constraints: false,
+      foreignKey: 'id'
+    })
+    Reservation.hasOne(models.Room, {
+      constraints: false,
+      foreignKey: 'id',
+      targetKey: 'roomId',
+      as: 'Room'
+    })
+    Reservation.hasOne(models.Invoice, {
+      constraints: false,
+      foreignKey: 'id'
+    })
   }
   return Reservation
 }

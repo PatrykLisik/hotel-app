@@ -4,10 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     Date: DataTypes.DATEONLY,
     Value: DataTypes.DECIMAL,
     Payment_method: DataTypes.STRING,
-    State: {
-      type: DataTypes.ENUM,
-      values: ['paid', 'not paid']
-    }
+    Paid: DataTypes.BOOLEAN
   }, {})
   Invoice.associate = function (models) {
     // associations can be defined here
