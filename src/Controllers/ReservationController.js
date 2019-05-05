@@ -71,7 +71,7 @@ module.exports = {
   },
 
   async update (req, res) {
-    Reservation.update(req.body, {
+    Reservation.update(req.body.update, {
       where: {
         id: req.body.id
       }
