@@ -92,6 +92,30 @@ module.exports = {
         error: err
       })
     })
+  },
+
+  async delete (req, res) {
+    Reservation.destroy({
+      where: {
+        id: req.body.id
+      }
+    }).then(result => {
+      console.log(result)
+      if (result === 1) {
+        res.send({
+          message: 'reservation deleted successfully'
+        })
+      } else {
+        res.status(400).send({
+          message: 'unsuccessful deletion'
+        })
+      }
+    }).catch(err => {
+      console.log(err)
+      res.status(400).send({
+        error: err
+      })
+    })
   }
 
 }

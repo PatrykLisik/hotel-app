@@ -37,4 +37,6 @@ module.exports = (app) => {
   app.get('/reservation', reservationController.getOne)
 
   app.put('/reservation', reservationController.update)
+
+  app.del('/reservation', reservationController.delete)
 }
