@@ -22,7 +22,7 @@ module.exports = (app) => {
     userController.update
   )
 
-  app.del('/user',
+  app.delete('/user',
     userController.delete
   )
 
@@ -45,7 +45,7 @@ module.exports = (app) => {
     roomController.update
   )
 
-  app.del('/room',
+  app.delete('/room',
     roomController.delete
   )
 
@@ -66,7 +66,11 @@ module.exports = (app) => {
     reservationController.update
   )
 
-  app.del('/reservation',
+  app.delete('/reservation',
     reservationController.delete
   )
+
+  // Invoice api
+  const invoiceController = require('./Controllers/InvoiceController')
+  app.post('/invoice', invoiceController.create)
 }
