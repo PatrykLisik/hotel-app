@@ -42,7 +42,10 @@ module.exports = (sequelize, DataTypes) => {
     return bcrypt.compareAsync(password, this.password)
   }
   User.associate = function (models) {
-    User.hasOne(models.UserRole)
+    User.hasOne(models.UserRole, {
+      constraint: false,
+      foreignKey: 'id'
+    })
   }
   return User
 }
