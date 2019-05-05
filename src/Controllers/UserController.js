@@ -61,6 +61,53 @@ module.exports = {
         error: err
       })
     }
+  },
+  async update (req, res) {
+    User.update(req.body.update, {
+      where: {
+        id: req.body.id
+      }
+    }).then(result => {
+      console.log(result)
+      if (result[0] === 1) {
+        res.send({
+          message: 'successful update'
+        })
+      } else {
+        res.status(400).send({
+          message: 'unsuccessful update'
+        })
+      }
+    }).catch(err => {
+      console.log(err)
+      res.status(400).send({
+        error: err
+      })
+    })
+  },
+
+  async delete (req, res) {
+    User.destroy({
+      where: {
+        id: req.body.id
+      }
+    }).then(result => {
+      console.log(result)
+      if (result === 1) {
+        res.send({
+          message: 'user deleted successfully'
+        })
+      } else {
+        res.status(400).send({
+          message: 'user deletion'
+        })
+      }
+    }).catch(err => {
+      console.log(err)
+      res.status(400).send({
+        error: err
+      })
+    })
   }
 
 }

@@ -1,13 +1,14 @@
 const {
-  Room
+  Reservation
 } = require('../models')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 
 module.exports = {
   async getAll (req, res) {
     try {
-      const rooms = await Room.findAll()
-      console.log(rooms)
-      res.send(rooms)
+      const reservation = await Reservation.findAll()
+      res.send(reservation)
     } catch (err) {
       res.status(400).send({
         error: err
@@ -18,17 +19,17 @@ module.exports = {
   async getOne (req, res) {
     try {
       const id = req.body.id
-      const room = await Room.findOne({
+      const reservation = await Reservation.findOne({
         where: {
           id: id
         }
       })
-      if (!room) {
+      if (!reservation) {
         return res.status(400).send({
           error: 'id incorrect'
         })
       }
-      res.send(room.toJSON())
+      res.send(reservation.toJSON())
     } catch (err) {
       res.status(500).send({
         error: err
@@ -38,14 +39,30 @@ module.exports = {
 
   async createOne (req, res) {
     try {
-      console.log(req.body)
-      const room = await Room.create(req.body)
-      if (!room) {
+      const OverlappingReservations = await Reservation.findAll({
+        where: {
+          roomId: req.body.roomId,
+          StartDate: {
+            [Op.lt]: req.body.EndDate
+          },
+          EndDate: {
+            [Op.gt]: req.body.StartDate
+          }
+        }
+      })
+
+      if (OverlappingReservations && OverlappingReservations.length) {
         return res.status(400).send({
-          error: 'room data incorrect'
+          error: 'reservation date overlaps with other reservations'
         })
       }
-      res.send(room.toJSON())
+      const reservation = await Reservation.create(req.body)
+      if (!reservation) {
+        return res.status(400).send({
+          error: 'reservation data incorrect'
+        })
+      }
+      res.send(reservation.toJSON())
     } catch (err) {
       res.status(500).send({
         error: err
@@ -54,7 +71,7 @@ module.exports = {
   },
 
   async update (req, res) {
-    Room.update(req.body.update, {
+    Reservation.update(req.body.update, {
       where: {
         id: req.body.id
       }
@@ -78,7 +95,7 @@ module.exports = {
   },
 
   async delete (req, res) {
-    Room.destroy({
+    Reservation.destroy({
       where: {
         id: req.body.id
       }
@@ -86,7 +103,7 @@ module.exports = {
       console.log(result)
       if (result === 1) {
         res.send({
-          message: 'Room deleted successfully'
+          message: 'reservation deleted successfully'
         })
       } else {
         res.status(400).send({
