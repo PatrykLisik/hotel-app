@@ -47,6 +47,7 @@ module.exports = {
           id: req.body.reservationIds
         }
       })
+
       let cost = 0
       for (var index = 0; index < reservations.length; ++index) {
         const reservation = reservations[index]
@@ -61,9 +62,19 @@ module.exports = {
         cost += room.cost * duration
       }
 
-      res.send({
-        cost: cost
+      const invoice = await Invoice.create({
+        Date: Date.now(),
+        Value: cost,
+        Paid: false
       })
+
+      reservations.forEach(reservation => {
+        reservation.update({
+          InvoiceId: invoice.id
+        })
+      })
+
+      res.send(invoice.toJSON())
     } catch (err) {
       res.status(400).send({
         error: err.message
