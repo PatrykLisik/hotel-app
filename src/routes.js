@@ -7,7 +7,7 @@ module.exports = (app) => {
   const idPolicy = require('./policies/IdRequire.js')
   // User api
   const userController = require('./Controllers/UserController')
-  const userCreationPolicy = require('./policies/UserCreationPolicy')
+  const userCreationPolicy = require('./policies/UserPolicy')
 
   app.post('/user',
     userCreationPolicy.register,
