@@ -14,7 +14,9 @@ module.exports = (app) => {
     userController.register
   )
   app.post('/login', userController.login)
-  app.put('/user', userController.update)
+  app.put('/user',
+    userCreationPolicy.update,
+    userController.update)
   app.delete('/user', userController.delete)
 
   // Room api
