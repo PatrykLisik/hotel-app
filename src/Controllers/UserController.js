@@ -99,7 +99,7 @@ module.exports = {
         })
       } else {
         res.status(400).send({
-          message: 'user deletion'
+          message: 'can not delete'
         })
       }
     }).catch(err => {
