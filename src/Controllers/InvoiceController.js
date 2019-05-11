@@ -3,8 +3,6 @@ const {
   Reservation,
   Room
 } = require('../models')
-const Sequelize = require('sequelize')
-const Op = Sequelize.Op
 const moment = require('moment')
 
 module.exports = {
@@ -63,9 +61,9 @@ module.exports = {
       }
 
       const invoice = await Invoice.create({
-        Date: Date.now(),
-        Value: cost,
-        Paid: false
+        date: Date.now(),
+        value: cost,
+        paid: false
       })
 
       reservations.forEach(reservation => {
@@ -85,9 +83,7 @@ module.exports = {
   async delete (req, res) {
     Invoice.destroy({
       where: {
-        id: {
-          [Op.or]: req.body.id
-        }
+        id: req.body.id
       }
     }).then(result => {
       console.log(result)
