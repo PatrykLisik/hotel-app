@@ -37,7 +37,7 @@ function errorDispatcher (error, res, next) {
 const schema = Joi.object().keys({
   firstName: Joi.string().alphanum().min(3).max(25),
   lastName: Joi.string().alphanum().min(3).max(25),
-  email: Joi.string().email().required(),
+  email: Joi.string().email(),
   password: Joi.string().min(8).max(128)
 })
 
