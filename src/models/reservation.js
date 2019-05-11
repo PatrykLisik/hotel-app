@@ -1,9 +1,9 @@
 'use strict'
 module.exports = (sequelize, DataTypes) => {
   const Reservation = sequelize.define('Reservation', {
-    StartDate: DataTypes.DATEONLY,
-    EndDate: DataTypes.DATEONLY,
-    ClientId: {
+    startDate: DataTypes.DATEONLY,
+    endDate: DataTypes.DATEONLY,
+    clientId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    InvoiceId: {
+    invoiceId: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {

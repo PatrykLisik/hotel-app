@@ -8,27 +8,27 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await UserRole.bulkCreate([{
       name: 'Admin',
-      CanViewAllUsers: true,
-      CanCRUDRooms: true,
-      CanViewAllReservations: true,
-      CanEditAllReservations: true,
-      CanAddRoles: true
+      canViewAllUsers: true,
+      canCRUDRooms: true,
+      canViewAllReservations: true,
+      canEditAllReservations: true,
+      canAddRoles: true
     },
     {
       name: 'User',
-      CanViewAllUsers: false,
-      CanCRUDRooms: false,
-      CanViewAllReservations: false,
-      CanEditAllReservations: false,
-      CanAddRoles: false
+      canViewAllUsers: false,
+      canCRUDRooms: false,
+      canViewAllReservations: false,
+      canEditAllReservations: false,
+      canAddRoles: false
     },
     {
       name: 'Manager',
-      CanViewAllUsers: false,
-      CanCRUDRooms: true,
-      CanViewAllReservations: true,
-      CanEditAllReservations: false,
-      CanAddRoles: false
+      canViewAllUsers: false,
+      canCRUDRooms: true,
+      canViewAllReservations: true,
+      canEditAllReservations: false,
+      canAddRoles: false
     }
 
     ], {})

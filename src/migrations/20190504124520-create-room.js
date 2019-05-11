@@ -8,16 +8,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      Number: {
+      number: {
         type: Sequelize.INTEGER
       },
-      Floor: {
+      floor: {
         type: Sequelize.INTEGER
       },
-      PeopleNumber: {
+      peopleNumber: {
         type: Sequelize.INTEGER
       },
-      Type: {
+      type: {
         type: Sequelize.STRING
       },
       cost: {

@@ -3,15 +3,12 @@ const {
   Reservation,
   Room
 } = require('../models')
-const Sequelize = require('sequelize')
-const Op = Sequelize.Op
 const moment = require('moment')
 
 module.exports = {
   async getAll (req, res) {
     try {
       const invoices = await Invoice.findAll()
-      console.log(invoices)
       res.send(invoices)
     } catch (err) {
       res.status(400).send({
@@ -49,28 +46,28 @@ module.exports = {
       })
 
       let cost = 0
-      for (var index = 0; index < reservations.length; ++index) {
+      for (let index = 0; index < reservations.length; ++index) {
         const reservation = reservations[index]
         const room = await Room.findOne({
           where: {
             id: reservation.roomId
           }
         })
-        const start = moment(reservation.StartDate)
-        const end = moment(reservation.EndDate)
+        const start = moment(reservation.startDate)
+        const end = moment(reservation.endDate)
         const duration = moment.duration(end.diff(start)).as('days')
         cost += room.cost * duration
       }
 
       const invoice = await Invoice.create({
-        Date: Date.now(),
-        Value: cost,
-        Paid: false
+        date: Date.now(),
+        value: cost,
+        paid: false
       })
 
       reservations.forEach(reservation => {
         reservation.update({
-          InvoiceId: invoice.id
+          invoiceId: invoice.id
         })
       })
 
@@ -85,9 +82,7 @@ module.exports = {
   async delete (req, res) {
     Invoice.destroy({
       where: {
-        id: {
-          [Op.or]: req.body.id
-        }
+        id: req.body.id
       }
     }).then(result => {
       console.log(result)

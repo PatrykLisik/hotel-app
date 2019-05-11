@@ -42,11 +42,11 @@ module.exports = {
       const OverlappingReservations = await Reservation.findAll({
         where: {
           roomId: req.body.roomId,
-          StartDate: {
-            [Op.lt]: req.body.EndDate
+          startDate: {
+            [Op.lt]: req.body.endDate
           },
-          EndDate: {
-            [Op.gt]: req.body.StartDate
+          endDate: {
+            [Op.gt]: req.body.startDate
           }
         }
       })

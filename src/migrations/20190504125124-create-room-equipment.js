@@ -8,22 +8,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      BedNumber: {
+      bedNumber: {
         type: Sequelize.INTEGER
       },
-      Teapot: {
+      teapot: {
         type: Sequelize.BOOLEAN
       },
-      TV: {
+      tv: {
         type: Sequelize.BOOLEAN
       },
-      Balcony: {
+      balcony: {
         type: Sequelize.BOOLEAN
       },
-      Fridge: {
+      fridge: {
         type: Sequelize.BOOLEAN
       },
-      FreeBeverages: {
+      freeBeverages: {
         type: Sequelize.BOOLEAN
       },
       createdAt: {

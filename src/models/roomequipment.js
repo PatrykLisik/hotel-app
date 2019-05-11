@@ -1,12 +1,12 @@
 'use strict'
 module.exports = (sequelize, DataTypes) => {
   const RoomEquipment = sequelize.define('RoomEquipment', {
-    BedNumber: DataTypes.INTEGER,
-    Teapot: DataTypes.BOOLEAN,
-    TV: DataTypes.BOOLEAN,
-    Balcony: DataTypes.BOOLEAN,
-    Fridge: DataTypes.BOOLEAN,
-    FreeBeverages: DataTypes.BOOLEAN
+    bedNumber: DataTypes.INTEGER,
+    teapot: DataTypes.BOOLEAN,
+    tv: DataTypes.BOOLEAN,
+    balcony: DataTypes.BOOLEAN,
+    fridge: DataTypes.BOOLEAN,
+    freeBeverages: DataTypes.BOOLEAN
   }, {})
   RoomEquipment.associate = function (models) {
     // associations can be defined here
