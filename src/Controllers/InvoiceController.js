@@ -9,7 +9,6 @@ module.exports = {
   async getAll (req, res) {
     try {
       const invoices = await Invoice.findAll()
-      console.log(invoices)
       res.send(invoices)
     } catch (err) {
       res.status(400).send({

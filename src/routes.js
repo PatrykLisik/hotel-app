@@ -57,7 +57,10 @@ module.exports = (app) => {
 
   // Invoice api
   const invoiceController = require('./Controllers/InvoiceController')
-  app.post('/invoice', invoiceController.create)
+  const invoicePolicy = require('./policies/InvoicePolicy')
+  app.post('/invoice',
+    invoicePolicy.create,
+    invoiceController.create)
   app.get('/invoice/all', invoiceController.getAll)
   app.get('/invoice',
     idPolicy.requireIdInBody,
