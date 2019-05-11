@@ -24,14 +24,18 @@ module.exports = (app) => {
 
   // Room api
   const roomController = require('./Controllers/RoomController')
+  const roomPolicy = require('./policies/RoomPolicy')
 
   app.get('/room',
     idPolicy.requireIdInBody,
     roomController.getOne)
   app.get('/room/all', roomController.getAll)
-  app.post('/room', roomController.createOne)
+  app.post('/room',
+    roomPolicy.create,
+    roomController.createOne)
   app.put('/room',
     idPolicy.requireIdInBody,
+    roomPolicy.update,
     roomController.update)
   app.delete('/room',
     idPolicy.requireIdInBody,
