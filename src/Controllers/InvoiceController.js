@@ -70,7 +70,7 @@ module.exports = {
 
       reservations.forEach(reservation => {
         reservation.update({
-          InvoiceId: invoice.id
+          invoiceId: invoice.id
         })
       })
 

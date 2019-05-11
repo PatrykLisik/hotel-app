@@ -9,7 +9,7 @@ module.exports = {
       Example:
         */
 
-    return queryInterface.addColumn('Reservations', 'InvoiceId', {
+    return queryInterface.addColumn('Reservations', 'invoiceId', {
       type: Sequelize.INTEGER,
       references: {
         model: 'Invoices',

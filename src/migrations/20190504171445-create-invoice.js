@@ -8,19 +8,19 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      Date: {
+      date: {
         type: Sequelize.DATEONLY,
         allowNull: false
       },
-      Value: {
+      value: {
         type: Sequelize.DECIMAL(10, 2),
         allowNull: false
       },
-      Payment_method: {
+      payment_method: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      State: {
+      state: {
         type: Sequelize.ENUM,
         values: ['paid', 'not paid']
       },

@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.addColumn('Invoices', 'Paid', {
+    return queryInterface.addColumn('Invoices', 'paid', {
       type: Sequelize.BOOLEAN,
       onUpdate: 'CASCADE',
       onDelete: 'SET NULL'

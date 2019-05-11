@@ -2,11 +2,11 @@
 module.exports = (sequelize, DataTypes) => {
   const UserRole = sequelize.define('UserRole', {
     name: DataTypes.STRING,
-    CanViewAllUsers: DataTypes.BOOLEAN,
-    CanCRUDRooms: DataTypes.BOOLEAN,
-    CanViewAllReservations: DataTypes.BOOLEAN,
-    CanEditAllReservations: DataTypes.BOOLEAN,
-    CanAddRoles: DataTypes.BOOLEAN
+    canViewAllUsers: DataTypes.BOOLEAN,
+    canCRUDRooms: DataTypes.BOOLEAN,
+    canViewAllReservations: DataTypes.BOOLEAN,
+    canEditAllReservations: DataTypes.BOOLEAN,
+    canAddRoles: DataTypes.BOOLEAN
   }, {})
   UserRole.associate = function (models) {
     // associations can be defined here
