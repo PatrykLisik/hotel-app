@@ -49,15 +49,15 @@ module.exports = {
       })
 
       let cost = 0
-      for (var index = 0; index < reservations.length; ++index) {
+      for (let index = 0; index < reservations.length; ++index) {
         const reservation = reservations[index]
         const room = await Room.findOne({
           where: {
             id: reservation.roomId
           }
         })
-        const start = moment(reservation.StartDate)
-        const end = moment(reservation.EndDate)
+        const start = moment(reservation.startDate)
+        const end = moment(reservation.endDate)
         const duration = moment.duration(end.diff(start)).as('days')
         cost += room.cost * duration
       }
