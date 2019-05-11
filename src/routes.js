@@ -21,6 +21,8 @@ module.exports = (app) => {
   app.delete('/user',
     idPolicy.requireIdInBody,
     userController.delete)
+  app.get('/user/all', userController.getAll)
+  app.get('/user', userController.getOne)
 
   // Room api
   const roomController = require('./Controllers/RoomController')
