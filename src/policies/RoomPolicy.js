@@ -43,7 +43,7 @@ module.exports = {
   update (req, res, next) {
     const {
       error
-    } = Joi.validate(req.body.update, schema, { presence: 'required' })
+    } = Joi.validate(req.body.update, schema)
 
     if (error) {
       res.status(400).send({
