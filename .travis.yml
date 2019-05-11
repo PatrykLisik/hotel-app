@@ -3,9 +3,13 @@ node_js:
   - "node"
 install:
   - npm install
+  - npm install newman
 before_script:
   - node --version
   - npm --version
+  - node_modules/.bin/newman --version
 script:
   - npm run lint
   - npm test
+after_deploy:
+  - newman run https://www.getpostman.com/collections/[$collection]?apikey=[apiKey] -e https://api.getpostman.com/environments/[$environment]?apikey=[apiKey]

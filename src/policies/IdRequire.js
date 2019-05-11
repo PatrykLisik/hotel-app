@@ -1,8 +1,8 @@
 const Joi = require('joi')
 
 const schema = Joi.object().keys({
-  id: Joi.number().integer().required()
-})
+  id: Joi.number().integer().required().error(new Error('id is required and must be integer'))
+}).unknown()
 
 module.exports = {
   requireIdInBody (req, res, next) {
@@ -10,8 +10,9 @@ module.exports = {
       error
     } = Joi.validate(req.body, schema)
     if (error) {
+      console.log('id is ' + error)
       res.status(400).send({
-        error: 'id is required and must be integer'
+        error: error.message
       })
     } else {
       next()

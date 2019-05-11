@@ -108,6 +108,36 @@ module.exports = {
         error: err
       })
     })
-  }
+  },
 
+  async getAll (req, res) {
+    User.findAll().then(users => {
+      res.send(users)
+    }).catch(err => {
+      console.log(err)
+      res.status(400).send({
+        error: err
+      })
+    })
+  },
+
+  async getOne (req, res) {
+    User.findOne({
+      where: {
+        id: req.body.id
+      }
+    }).then(user => {
+      if (user) {
+        res.send(user.toJSON())
+      } else {
+        res.status(400).send({
+          error: 'No user with provided id'
+        })
+      }
+    }).catch(err => {
+      res.status(500).send({
+        error: err
+      })
+    })
+  }
 }
