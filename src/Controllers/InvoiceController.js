@@ -7,35 +7,29 @@ const moment = require('moment')
 
 module.exports = {
   async getAll (req, res) {
-    try {
-      const invoices = await Invoice.findAll()
-      res.send(invoices)
-    } catch (err) {
-      res.status(400).send({
-        error: err
+    Invoice.findAll()
+      .then(invoices => {
+        res.send(invoices)
       })
-    }
+      .catch(err => {
+        res.status(400).send({
+          error: err
+        })
+      })
   },
 
   async getOne (req, res) {
-    try {
-      const id = req.body.id
-      const invoice = await Invoice.findOne({
-        where: {
-          id: id
-        }
-      })
-      if (!invoice) {
-        return res.status(400).send({
-          error: 'id incorrect'
-        })
+    Invoice.findOne({
+      where: {
+        id: req.body.id
       }
-      res.send(invoice.toJSON())
-    } catch (err) {
-      res.status(500).send({
-        error: err
+    })
+      .then(invoice => {
+        res.send(invoice.toJSON())
       })
-    }
+      .catch(err => {
+        res.status(400).send(err)
+      })
   },
   async create (req, res) {
     try {
