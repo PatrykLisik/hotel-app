@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     state: {
       type: DataTypes.ENUM,
-      values: ['paid', 'not paid']
+      values: ['paid', 'not paid'],
+      defaultValue: 'not paid'
     }
   }, {})
   Invoice.associate = function (models) {

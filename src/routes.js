@@ -63,6 +63,9 @@ module.exports = (app) => {
   app.post('/invoice',
     invoicePolicy.create,
     invoiceController.create)
+  app.post('/invoice/pay',
+    idPolicy.requireIdInBody,
+    invoiceController.markAsPaid)
   app.get('/invoice/all', invoiceController.getAll)
   app.get('/invoice',
     idPolicy.requireIdInBody,

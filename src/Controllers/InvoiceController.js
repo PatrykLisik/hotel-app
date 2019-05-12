@@ -101,6 +101,28 @@ module.exports = {
         error: err
       })
     })
+  },
+
+  async markAsPaid (req, res) {
+    console.log(req.body.id)
+    Invoice.update(
+      {
+        state: 'paid',
+        payment_method: req.body.paymentMethod
+      },
+      {
+        where: {
+          id: req.body.id
+        }
+      })
+      .then(() => {
+        res.send({
+          message: 'successful payment'
+        })
+      })
+      .catch((err) => {
+        res.status(400).send(err)
+      })
   }
 
 }
