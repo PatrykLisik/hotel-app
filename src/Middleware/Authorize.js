@@ -10,6 +10,10 @@ function isUserIdSameInTokenAndBody (req, res, next, tokenPayload) {
   return req.body.user.id === tokenPayload.user.id
 }
 
+function isUserAndClientIdSame (req, res, next, tokenPayload) {
+  return req.body.user.clientId === tokenPayload.user.id
+}
+
 module.exports = {
   authorizeFactoryMethod (permissionName, preConditions = returnFalse) {
     return (req, res, next) => {
@@ -32,6 +36,9 @@ module.exports = {
   },
   isUserIdOrRequirePermission (permissionName) {
     this.authorizeFactoryMethod(permissionName, isUserIdSameInTokenAndBody)
+  },
+  isUserAndClientIdSameOrRequirePermission (permissionName) {
+    this.authorizeFactoryMethod(permissionName, isUserAndClientIdSame)
   }
 }
 

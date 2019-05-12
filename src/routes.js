@@ -56,18 +56,23 @@ module.exports = (app) => {
 
   // Reservation api
   const reservationController = require('./Controllers/ReservationController')
-  app.post('/reservation', reservationController.createOne)
+  app.post('/reservation',
+    authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
+    reservationController.createOne)
   app.get('/reservation/all',
     authorization.authorizeFactoryMethod('canViewAllReservations'),
     reservationController.getAll)
   app.get('/reservation',
     idPolicy.requireIdInBody,
+    authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
     reservationController.getOne)
   app.put('/reservation',
     idPolicy.requireIdInBody,
+    authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
     reservationController.update)
   app.delete('/reservation',
     idPolicy.requireIdInBody,
+    authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
     reservationController.delete)
 
   // Invoice api
