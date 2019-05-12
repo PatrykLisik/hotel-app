@@ -5,6 +5,8 @@ module.exports = (app) => {
     })
   })
   const idPolicy = require('./policies/IdRequire.js')
+  const authorization = require('./Middleware/Authorize')
+
   // User api
   const userController = require('./Controllers/UserController')
   const userCreationPolicy = require('./policies/UserPolicy')
@@ -21,7 +23,9 @@ module.exports = (app) => {
   app.delete('/user',
     idPolicy.requireIdInBody,
     userController.delete)
-  app.get('/user/all', userController.getAll)
+  app.get('/user/all',
+    authorization.authorizeFactoryMethod('canViewAllUsers'),
+    userController.getAll)
   app.get('/user', userController.getOne)
 
   // Room api
