@@ -4,6 +4,7 @@ module.exports = (app) => {
       message: 'test endpoint Hello World!'
     })
   })
+
   const idPolicy = require('./Middleware/IdRequire.js')
   const authorization = require('./Middleware/Authorize')
 
@@ -16,18 +17,22 @@ module.exports = (app) => {
     userController.register
   )
   app.post('/login', userController.login)
+
   app.put('/user',
     idPolicy.requireIdInBody,
     authorization.isUserIdOrRequirePermission('CanViewAllUsers'),
     userCreationPolicy.update,
     userController.update)
+
   app.delete('/user',
     idPolicy.requireIdInBody,
     authorization.isUserIdOrRequirePermission('CanCRUDUsers'),
     userController.delete)
+
   app.get('/user/all',
     authorization.authorizeFactoryMethod('canViewAllUsers'),
     userController.getAll)
+
   app.get('/user',
     authorization.isUserIdOrRequirePermission('CanCRUDUsers'),
     userController.getOne)
@@ -40,15 +45,18 @@ module.exports = (app) => {
     idPolicy.requireIdInBody,
     roomController.getOne)
   app.get('/room/all', roomController.getAll)
+
   app.post('/room',
     authorization.authorizeFactoryMethod('canCRUDRooms'),
     roomPolicy.create,
     roomController.createOne)
+
   app.put('/room',
     idPolicy.requireIdInBody,
     authorization.authorizeFactoryMethod('canCRUDRooms'),
     roomPolicy.update,
     roomController.update)
+
   app.delete('/room',
     idPolicy.requireIdInBody,
     authorization.authorizeFactoryMethod('canCRUDRooms'),
@@ -59,17 +67,21 @@ module.exports = (app) => {
   app.post('/reservation',
     authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
     reservationController.createOne)
+
   app.get('/reservation/all',
     authorization.authorizeFactoryMethod('canViewAllReservations'),
     reservationController.getAll)
+
   app.get('/reservation',
     idPolicy.requireIdInBody,
     authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
     reservationController.getOne)
+
   app.put('/reservation',
     idPolicy.requireIdInBody,
     authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
     reservationController.update)
+
   app.delete('/reservation',
     idPolicy.requireIdInBody,
     authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
@@ -78,6 +90,7 @@ module.exports = (app) => {
   // Invoice api
   const invoiceController = require('./Controllers/InvoiceController')
   const invoicePolicy = require('./Middleware/policies/InvoicePolicy')
+
   app.post('/invoice',
     invoicePolicy.create,
     authorization.authorizeFactoryMethod('canCreateInvoice'),

@@ -35,11 +35,9 @@ module.exports = {
     }
   },
   isUserIdOrRequirePermission (permissionName) {
-    this.authorizeFactoryMethod(permissionName, isUserIdSameInTokenAndBody)
+    return this.authorizeFactoryMethod(permissionName, isUserIdSameInTokenAndBody)
   },
   isUserAndClientIdSameOrRequirePermission (permissionName) {
-    this.authorizeFactoryMethod(permissionName, isUserAndClientIdSame)
+    return this.authorizeFactoryMethod(permissionName, isUserAndClientIdSame)
   }
 }
-
-

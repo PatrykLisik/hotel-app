@@ -6,7 +6,13 @@ module.exports = (sequelize, DataTypes) => {
     canCRUDRooms: DataTypes.BOOLEAN,
     canViewAllReservations: DataTypes.BOOLEAN,
     canEditAllReservations: DataTypes.BOOLEAN,
-    canAddRoles: DataTypes.BOOLEAN
+    canAddRoles: DataTypes.BOOLEAN,
+    canCRUDUsers: DataTypes.BOOLEAN,
+    canCRUDAllReservations: DataTypes.BOOLEAN,
+    canViewAllInvoices: DataTypes.BOOLEAN,
+    canPayInvoice: DataTypes.BOOLEAN,
+    canCreateInvoice: DataTypes.BOOLEAN,
+    canDeleteInvoice: DataTypes.BOOLEAN
   }, {})
   UserRole.associate = function (models) {
     // associations can be defined here
