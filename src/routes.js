@@ -18,15 +18,19 @@ module.exports = (app) => {
   app.post('/login', userController.login)
   app.put('/user',
     idPolicy.requireIdInBody,
+    authorization.isUserIdOrRequirePermission('CanViewAllUsers'),
     userCreationPolicy.update,
     userController.update)
   app.delete('/user',
     idPolicy.requireIdInBody,
+    authorization.isUserIdOrRequirePermission('CanCRUDUsers'),
     userController.delete)
   app.get('/user/all',
     authorization.authorizeFactoryMethod('canViewAllUsers'),
     userController.getAll)
-  app.get('/user', userController.getOne)
+  app.get('/user',
+    authorization.isUserIdOrRequirePermission('CanCRUDUsers'),
+    userController.getOne)
 
   // Room api
   const roomController = require('./Controllers/RoomController')
@@ -37,20 +41,25 @@ module.exports = (app) => {
     roomController.getOne)
   app.get('/room/all', roomController.getAll)
   app.post('/room',
+    authorization.authorizeFactoryMethod('canCRUDRooms'),
     roomPolicy.create,
     roomController.createOne)
   app.put('/room',
     idPolicy.requireIdInBody,
+    authorization.authorizeFactoryMethod('canCRUDRooms'),
     roomPolicy.update,
     roomController.update)
   app.delete('/room',
     idPolicy.requireIdInBody,
+    authorization.authorizeFactoryMethod('canCRUDRooms'),
     roomController.delete)
 
   // Reservation api
   const reservationController = require('./Controllers/ReservationController')
   app.post('/reservation', reservationController.createOne)
-  app.get('/reservation/all', reservationController.getAll)
+  app.get('/reservation/all',
+    authorization.authorizeFactoryMethod('canViewAllReservations'),
+    reservationController.getAll)
   app.get('/reservation',
     idPolicy.requireIdInBody,
     reservationController.getOne)
