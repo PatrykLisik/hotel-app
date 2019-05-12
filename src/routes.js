@@ -4,12 +4,12 @@ module.exports = (app) => {
       message: 'test endpoint Hello World!'
     })
   })
-  const idPolicy = require('./policies/IdRequire.js')
+  const idPolicy = require('./Middleware/IdRequire.js')
   const authorization = require('./Middleware/Authorize')
 
   // User api
   const userController = require('./Controllers/UserController')
-  const userCreationPolicy = require('./policies/UserPolicy')
+  const userCreationPolicy = require('./Middleware/policies/UserPolicy')
 
   app.post('/user',
     userCreationPolicy.register,
@@ -30,7 +30,7 @@ module.exports = (app) => {
 
   // Room api
   const roomController = require('./Controllers/RoomController')
-  const roomPolicy = require('./policies/RoomPolicy')
+  const roomPolicy = require('./Middleware/policies/RoomPolicy')
 
   app.get('/room',
     idPolicy.requireIdInBody,
@@ -63,7 +63,7 @@ module.exports = (app) => {
 
   // Invoice api
   const invoiceController = require('./Controllers/InvoiceController')
-  const invoicePolicy = require('./policies/InvoicePolicy')
+  const invoicePolicy = require('./Middleware/policies/InvoicePolicy')
   app.post('/invoice',
     invoicePolicy.create,
     invoiceController.create)
