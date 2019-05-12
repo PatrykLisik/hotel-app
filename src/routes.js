@@ -80,15 +80,24 @@ module.exports = (app) => {
   const invoicePolicy = require('./Middleware/policies/InvoicePolicy')
   app.post('/invoice',
     invoicePolicy.create,
+    authorization.authorizeFactoryMethod('canCreateInvoice'),
     invoiceController.create)
+
   app.post('/invoice/pay',
     idPolicy.requireIdInBody,
+    authorization.authorizeFactoryMethod('canPayInvoice'),
     invoiceController.markAsPaid)
-  app.get('/invoice/all', invoiceController.getAll)
+
+  app.get('/invoice/all',
+    authorization.authorizeFactoryMethod('canViewAllInvoices'),
+    invoiceController.getAll)
+
   app.get('/invoice',
     idPolicy.requireIdInBody,
     invoiceController.getOne)
+
   app.delete('/invoice',
     idPolicy.requireIdInBody,
+    authorization.authorizeFactoryMethod('canDeleteInvoice'),
     invoiceController.delete)
 }
