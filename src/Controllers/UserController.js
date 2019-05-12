@@ -68,7 +68,6 @@ module.exports = {
         id: req.body.id
       }
     }).then(result => {
-      console.log(result)
       if (result[0] === 1) {
         res.send({
           message: 'successful update'
@@ -79,7 +78,6 @@ module.exports = {
         })
       }
     }).catch(err => {
-      console.log(err)
       res.status(400).send({
         error: err
       })
@@ -92,7 +90,6 @@ module.exports = {
         id: req.body.id
       }
     }).then(result => {
-      console.log(result)
       if (result === 1) {
         res.send({
           message: 'user deleted successfully'
@@ -103,7 +100,6 @@ module.exports = {
         })
       }
     }).catch(err => {
-      console.log(err)
       res.status(400).send({
         error: err
       })
@@ -114,7 +110,6 @@ module.exports = {
     User.findAll().then(users => {
       res.send(users)
     }).catch(err => {
-      console.log(err)
       res.status(400).send({
         error: err
       })

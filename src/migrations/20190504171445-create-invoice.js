@@ -17,8 +17,8 @@ module.exports = {
         allowNull: false
       },
       payment_method: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.ENUM,
+        values: ['card', 'cash', 'transfer']
       },
       state: {
         type: Sequelize.ENUM,
