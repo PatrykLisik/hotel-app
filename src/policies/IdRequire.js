@@ -10,7 +10,6 @@ module.exports = {
       error
     } = Joi.validate(req.body, schema)
     if (error) {
-      console.log('id is ' + error)
       res.status(400).send({
         error: error.message
       })

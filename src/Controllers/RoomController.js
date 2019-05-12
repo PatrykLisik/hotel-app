@@ -6,7 +6,6 @@ module.exports = {
   async getAll (req, res) {
     try {
       const rooms = await Room.findAll()
-      console.log(rooms)
       res.send(rooms)
     } catch (err) {
       res.status(400).send({
@@ -38,7 +37,6 @@ module.exports = {
 
   async createOne (req, res) {
     try {
-      console.log(req.body)
       const room = await Room.create(req.body)
       if (!room) {
         return res.status(400).send({
@@ -59,7 +57,6 @@ module.exports = {
         id: req.body.id
       }
     }).then(result => {
-      console.log(result)
       if (result[0] === 1) {
         res.send({
           message: 'successful update'
@@ -70,7 +67,6 @@ module.exports = {
         })
       }
     }).catch(err => {
-      console.log(err)
       res.status(400).send({
         error: err
       })
@@ -83,7 +79,6 @@ module.exports = {
         id: req.body.id
       }
     }).then(result => {
-      console.log(result)
       if (result === 1) {
         res.send({
           message: 'Room deleted successfully'
@@ -94,7 +89,6 @@ module.exports = {
         })
       }
     }).catch(err => {
-      console.log(err)
       res.status(400).send({
         error: err
       })

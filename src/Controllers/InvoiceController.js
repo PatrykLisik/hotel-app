@@ -85,7 +85,6 @@ module.exports = {
         id: req.body.id
       }
     }).then(result => {
-      console.log(result)
       if (result === 1) {
         res.send({
           message: 'Invoice deleted successfully'
@@ -96,7 +95,6 @@ module.exports = {
         })
       }
     }).catch(err => {
-      console.log(err)
       res.status(400).send({
         error: err
       })
@@ -104,7 +102,6 @@ module.exports = {
   },
 
   async markAsPaid (req, res) {
-    console.log(req.body.id)
     Invoice.update(
       {
         state: 'paid',
