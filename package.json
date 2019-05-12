@@ -10,7 +10,7 @@
     "dev": "npm run lint  && nodemon src/index.js ",
     "migrate": "npx sequelize db:migrate",
     "seed": "npx sequelize db:seed:all",
-    "clean-migrete" : "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate --debug"
+    "clean-migrate" : "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate --debug"
   },
   "repository": {
     "type": "git",

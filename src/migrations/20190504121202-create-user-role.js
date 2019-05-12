@@ -11,19 +11,19 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      CanViewAllUsers: {
+      canViewAllUsers: {
         type: Sequelize.BOOLEAN
       },
-      CanCRUDRooms: {
+      canCRUDRooms: {
         type: Sequelize.BOOLEAN
       },
-      CanViewAllReservations: {
+      canViewAllReservations: {
         type: Sequelize.BOOLEAN
       },
-      CanEditAllReservations: {
+      canEditAllReservations: {
         type: Sequelize.BOOLEAN
       },
-      CanAddRoles: {
+      canAddRoles: {
         type: Sequelize.BOOLEAN
       },
       createdAt: {
