@@ -20,7 +20,7 @@ module.exports = (app) => {
 
   app.put('/user',
     idPolicy.requireIdInBody,
-    authorization.isUserIdOrRequirePermission('CanViewAllUsers'),
+    authorization.isUserIdOrRequirePermission('CanCRUDUsers'),
     userCreationPolicy.update,
     userController.update)
 
@@ -65,7 +65,7 @@ module.exports = (app) => {
   // Reservation api
   const reservationController = require('./Controllers/ReservationController')
   app.post('/reservation',
-    authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
+    authorization.isAssociatedReservationOrRequirePermission('canCRUDAllReservations'),
     reservationController.createOne)
 
   app.get('/reservation/all',
@@ -74,17 +74,17 @@ module.exports = (app) => {
 
   app.get('/reservation',
     idPolicy.requireIdInBody,
-    authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
+    authorization.isAssociatedReservationOrRequirePermission('canCRUDAllReservations'),
     reservationController.getOne)
 
   app.put('/reservation',
     idPolicy.requireIdInBody,
-    authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
+    authorization.isAssociatedReservationOrRequirePermission('canCRUDAllReservations'),
     reservationController.update)
 
   app.delete('/reservation',
     idPolicy.requireIdInBody,
-    authorization.isUserAndClientIdSameOrRequirePermission('canCRUDAllReservations'),
+    authorization.isAssociatedReservationOrRequirePermission('canCRUDAllReservations'),
     reservationController.delete)
 
   // Invoice api
