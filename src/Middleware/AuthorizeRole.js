@@ -4,7 +4,7 @@ const secret = config.authentication.secret
 const RolesENUM = require('./Roles')
 
 module.exports = {
-  authorizeFactoryMethod (roles = []) {
+  authorizeRoleFactoryMethod (roles = []) {
     if (typeof roles === 'string') {
       roles = [roles]
     }
@@ -19,7 +19,6 @@ module.exports = {
       const role = payload.roleJSON.name
 
       if (roles.includes(role) || role === RolesENUM.Admin) {
-        console.log('next')
         return next()
       }
       return res.status(403).json({ error: 'Permission denied' })

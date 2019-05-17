@@ -7,7 +7,7 @@ module.exports = (app) => {
   )
 
   const idPolicy = require('./Middleware/IdRequire.js')
-  const authorization = require('./Middleware/Authorize')
+  const authorization = require('./Middleware/AuthorizeRole')
   const RolesENUM = require('./Middleware/Roles')
 
   // User api
@@ -23,21 +23,21 @@ module.exports = (app) => {
 
   app.put('/user',
     idPolicy.requireIdInBody,
-    authorization.authorizeFactoryMethod(RolesENUM.User),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
     userCreationPolicy.update,
     userController.update)
 
   app.delete('/user',
     idPolicy.requireIdInBody,
-    authorization.authorizeFactoryMethod(RolesENUM.User),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
     userController.delete)
 
   app.get('/user/all',
-    authorization.authorizeFactoryMethod(RolesENUM.Manager),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
     userController.getAll)
 
   app.get('/user',
-    authorization.authorizeFactoryMethod([RolesENUM.Manager, RolesENUM.User]),
+    authorization.authorizeRoleFactoryMethod([RolesENUM.Manager, RolesENUM.User]),
     userController.getOne)
 
   // Room api
@@ -50,44 +50,44 @@ module.exports = (app) => {
   app.get('/room/all', roomController.getAll)
 
   app.post('/room',
-    authorization.authorizeFactoryMethod(RolesENUM.Manager),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
     roomPolicy.create,
     roomController.createOne)
 
   app.put('/room',
     idPolicy.requireIdInBody,
-    authorization.authorizeFactoryMethod(RolesENUM.Manager),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
     roomPolicy.update,
     roomController.update)
 
   app.delete('/room',
     idPolicy.requireIdInBody,
-    authorization.authorizeFactoryMethod(RolesENUM.Manager),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
     roomController.delete)
 
   // Reservation api
   const reservationController = require('./Controllers/ReservationController')
   app.post('/reservation',
-    authorization.authorizeFactoryMethod(RolesENUM.User),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
     reservationController.createOne)
 
   app.get('/reservation/all',
-    authorization.authorizeFactoryMethod(RolesENUM.Manager),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
     reservationController.getAll)
 
   app.get('/reservation',
     idPolicy.requireIdInBody,
-    authorization.authorizeFactoryMethod(RolesENUM.User),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
     reservationController.getOne)
 
   app.put('/reservation',
     idPolicy.requireIdInBody,
-    authorization.authorizeFactoryMethod(RolesENUM.User),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
     reservationController.update)
 
   app.delete('/reservation',
     idPolicy.requireIdInBody,
-    authorization.authorizeFactoryMethod(RolesENUM.User),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
     reservationController.delete)
 
   // Invoice api
@@ -96,25 +96,25 @@ module.exports = (app) => {
 
   app.post('/invoice',
     invoicePolicy.create,
-    authorization.authorizeFactoryMethod(RolesENUM.User),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
     invoiceController.create)
 
   app.post('/invoice/pay',
     idPolicy.requireIdInBody,
-    authorization.authorizeFactoryMethod(RolesENUM.User),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
     invoiceController.markAsPaid)
 
   app.get('/invoice/all',
-    authorization.authorizeFactoryMethod(RolesENUM.Manager),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
     invoiceController.getAll)
 
   app.get('/invoice',
     idPolicy.requireIdInBody,
-    authorization.authorizeFactoryMethod(RolesENUM.User),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
     invoiceController.getOne)
 
   app.delete('/invoice',
     idPolicy.requireIdInBody,
-    authorization.authorizeFactoryMethod(RolesENUM.Admin),
+    authorization.authorizeRoleFactoryMethod(RolesENUM.Admin),
     invoiceController.delete)
 }
