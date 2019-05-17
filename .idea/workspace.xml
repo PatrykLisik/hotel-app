@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="10" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4818aa5-cad5-4bfe-a608-c05bd5cba189" name="Default Changelist" comment="invoice controller functions refactored to promises">
+    <list default="true" id="e4818aa5-cad5-4bfe-a608-c05bd5cba189" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/InvoiceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/InvoiceController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Middleware/AuthorizeRole.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Middleware/Authorization/AuthorizeRole.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Middleware/Roles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Middleware/Authorization/Roles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,36 +16,27 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="hotel-app" />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.52851456">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Controllers/ReservationController.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="110" column="22" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/policies/IdRequire.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="172">
-                  <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Controllers/InvoiceController.js">
+            <entry file="file://$PROJECT_DIR$/src/Middleware/Authorization/AuthorizeRole.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="121">
-                  <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-                  <folding>
-                    <element signature="e#742#1726#0" />
-                  </folding>
+                <state relative-caret-position="216">
+                  <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Middleware/Authorization/Roles.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="72">
+                  <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -48,26 +44,53 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/routes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="428">
-                  <caret line="65" selection-start-line="65" selection-end-line="65" />
+                <state relative-caret-position="336">
+                  <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Controllers/RoomController.js">
+            <entry file="file://$PROJECT_DIR$/src/Middleware/policies/RoomPolicy.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="24">
-                  <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+                <state relative-caret-position="530">
+                  <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Controllers/UserController.js">
+            <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+                <state relative-caret-position="288">
+                  <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/migrations/20190504121202-create-user-role.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="288">
+                  <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="48">
+                  <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Middleware/IdRequire.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="312">
+                  <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -77,19 +100,19 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/migrations/20190504171445-create-invoice.js">
+            <entry file="file://$PROJECT_DIR$/src/models/reservation.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+                <state relative-caret-position="48">
+                  <caret line="2" column="51" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="51" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Controllers/RoomController.js">
+            <entry file="file://$PROJECT_DIR$/src/config/config.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+                <state relative-caret-position="264">
+                  <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -110,13 +133,21 @@
       <find>log</find>
       <find>console</find>
       <find>console.lo</find>
+      <find>put</find>
+      <find>can</find>
+      <find>Can</find>
+      <find>canCRUDUsers</find>
+      <find>isUserIdOrRequirePermission</find>
     </findStrings>
+    <replaceStrings>
+      <replace>can</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="38273bddd7020c086625d78e2f59a5b4d52e7ee8" />
       </map>
     </option>
   </component>
@@ -133,7 +164,6 @@
         <option value="$PROJECT_DIR$/src/models/reservation.js" />
         <option value="$PROJECT_DIR$/src/models/room.js" />
         <option value="$PROJECT_DIR$/src/models/roomequipment.js" />
-        <option value="$PROJECT_DIR$/src/models/userrole.js" />
         <option value="$PROJECT_DIR$/src/migrations/20190504135615-create-reservation.js" />
         <option value="$PROJECT_DIR$/src/policies/InvoicePolicy.js" />
         <option value="$PROJECT_DIR$/src/policies/UserPolicy.js" />
@@ -141,12 +171,26 @@
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/migrations/20190504171445-create-invoice.js" />
         <option value="$PROJECT_DIR$/src/models/invoice.js" />
-        <option value="$PROJECT_DIR$/src/routes.js" />
         <option value="$PROJECT_DIR$/src/Controllers/RoomController.js" />
-        <option value="$PROJECT_DIR$/src/Controllers/UserController.js" />
         <option value="$PROJECT_DIR$/src/Controllers/ReservationController.js" />
         <option value="$PROJECT_DIR$/src/policies/IdRequire.js" />
         <option value="$PROJECT_DIR$/src/Controllers/InvoiceController.js" />
+        <option value="$PROJECT_DIR$/src/Controllers/UserController.js" />
+        <option value="$PROJECT_DIR$/src/migrations/20190512143644-new permissions.js" />
+        <option value="$PROJECT_DIR$/src/migrations/20190512143644-CanCRUDUsersPremisssion.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/migrations/20190512165506-permission for default users.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
+        <option value="$PROJECT_DIR$/src/routes.js" />
+        <option value="$PROJECT_DIR$/src/migrations/20190512143644-ReservationInvoicePremisssion.js" />
+        <option value="$PROJECT_DIR$/src/migrations/20190504121202-create-user-role.js" />
+        <option value="$PROJECT_DIR$/src/seeders/20190514060319-default users and roles.js" />
+        <option value="$PROJECT_DIR$/src/models/userrole.js" />
+        <option value="$PROJECT_DIR$/src/Middleware/policies/Roles.js" />
+        <option value="$PROJECT_DIR$/src/Middleware/Authorize.js" />
+        <option value="$PROJECT_DIR$/src/Middleware/AuthorizeRole.js" />
+        <option value="$PROJECT_DIR$/src/Middleware/Auuthorization/AuthorizeRole.js" />
       </list>
     </option>
   </component>
@@ -161,18 +205,60 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-4" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <showMembers ProjectPane="true" />
       <autoscrollToSource ProjectPane="true" />
+      <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="hotel-app" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\hotel-app" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="hotel-app" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\hotel-app" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="hotel-app" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\hotel-app" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="config" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="hotel-app" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\hotel-app" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Middleware" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="hotel-app" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\hotel-app" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Middleware" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Authorization" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="hotel-app" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\hotel-app" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,24 +275,13 @@
               <item name="hotel-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="hotel-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hotel-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="hotel-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="policies" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="hotel-app" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\hotel-app" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -221,7 +296,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="javascript.nodejs.core.library.configured.version" value="11.10.0" />
+    <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -237,7 +314,14 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\hotel-app\src\Middleware\Auuthorization" />
+      <recent name="E:\hotel-app\src\Middleware" />
+      <recent name="E:\hotel-app\src\migrations" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -266,6 +350,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="clean-migrate" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="clean-migrate" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="lint" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -287,10 +381,29 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <arguments value="dev" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="npm.run dev" />
       <item itemvalue="npm.lint" />
+      <item itemvalue="npm.clean-migrate" />
+      <item itemvalue="npm.start dev" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start dev" />
+        <item itemvalue="npm.start dev" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -310,6 +423,8 @@
       <workItem from="1557557930705" duration="6891000" />
       <workItem from="1557571032714" duration="7855000" />
       <workItem from="1557654432832" duration="6103000" />
+      <workItem from="1557811629359" duration="3343000" />
+      <workItem from="1558112282427" duration="2907000" />
     </task>
     <task id="LOCAL-00001" summary="user update has same constraints as user create">
       <created>1557508462628</created>
@@ -409,11 +524,95 @@
       <option name="project" value="LOCAL" />
       <updated>1557659111865</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="working authorization factory method">
+      <created>1557669259487</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1557669259487</updated>
+    </task>
+    <task id="LOCAL-00016" summary="polices moved into middleware directory">
+      <created>1557669406253</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1557669406253</updated>
+    </task>
+    <task id="LOCAL-00017" summary="authorize user action">
+      <created>1557675929909</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1557675929909</updated>
+    </task>
+    <task id="LOCAL-00018" summary="reservations authorization">
+      <created>1557676480715</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1557676480715</updated>
+    </task>
+    <task id="LOCAL-00019" summary="reservations authorization">
+      <created>1557676620274</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1557676620274</updated>
+    </task>
+    <task id="LOCAL-00020" summary="invoice authorization">
+      <created>1557677722275</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1557677722275</updated>
+    </task>
+    <task id="LOCAL-00021" summary="factory methods returns, small reformat in routes">
+      <created>1557681231061</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1557681231061</updated>
+    </task>
+    <task id="LOCAL-00022" summary="default users migration is done last">
+      <created>1557685115309</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1557685115309</updated>
+    </task>
+    <task id="LOCAL-00023" summary="run in postman buttons">
+      <created>1557685621270</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1557685621270</updated>
+    </task>
+    <task id="LOCAL-00024" summary="creation of users moved to seed">
+      <created>1557813923464</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1557813923464</updated>
+    </task>
+    <task id="LOCAL-00025" summary="user role simplified">
+      <created>1557814568060</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1557814568060</updated>
+    </task>
+    <task id="LOCAL-00026" summary="proper name to AuthorizeRole">
+      <created>1558114528974</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1558114528974</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35856000" />
+    <option name="totallyTimeSpent" value="69126000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -425,16 +624,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="0" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19573334" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.57365686" visible="true" weight="0.1975764" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="6" sideWeight="0.42634314" side_tool="true" weight="0.19573334" />
+      <window_info id="Repositories" order="7" weight="0.1936" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -446,9 +646,9 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5002667" side_tool="true" weight="0.36566332" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49973333" weight="0.24637681" />
-      <window_info anchor="bottom" id="Run Dashboard" order="12" sideWeight="0.49973333" weight="0.36566332" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32998884" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49973333" weight="0.2374582" />
+      <window_info anchor="bottom" id="Run Dashboard" order="12" sideWeight="0.49973333" visible="true" weight="0.28762543" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32998884" />
       <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -507,8 +707,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="user update has same constraints as user create" />
-    <MESSAGE value="policy that requires id in request" />
     <MESSAGE value="package update" />
     <MESSAGE value="id is required in put, update and del requests" />
     <MESSAGE value="userCreationPolicy renamed to UserPolicy" />
@@ -522,17 +720,28 @@
     <MESSAGE value="invoice pay endpoint" />
     <MESSAGE value="debug symbols removed" />
     <MESSAGE value="invoice controller functions refactored to promises" />
-    <option name="LAST_COMMIT_MESSAGE" value="invoice controller functions refactored to promises" />
+    <MESSAGE value="working authorization factory method" />
+    <MESSAGE value="polices moved into middleware directory" />
+    <MESSAGE value="authorize user action" />
+    <MESSAGE value="reservations autroization" />
+    <MESSAGE value="reservations authorization" />
+    <MESSAGE value="invoice authorization" />
+    <MESSAGE value="factory methods returns, small reformat in routes" />
+    <MESSAGE value="default users migration is done last" />
+    <MESSAGE value="run in postman buttons" />
+    <MESSAGE value="creation of users moved to seed" />
+    <MESSAGE value="user role simplified" />
+    <MESSAGE value="proper name to AuthorizeRole" />
+    <option name="LAST_COMMIT_MESSAGE" value="proper name to AuthorizeRole" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="js.build_tools.npm">
+        <watch expression="reservation" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JavaScript-modules-diagram/E:/hotel-app/src/policies/UserCreationPolicy.js">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -554,18 +763,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/migrations/20190504121202-create-user-role.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/bcryptjs/externs/minimal-env.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/migrations/20190504121453-UserRoleAssociaction.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/migrations/20190504124520-create-room.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -581,29 +784,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/migrations/20190504144604-DefaultValuesUserRoles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/migrations/20190504172102-reservation invoice association.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/index.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/reservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/room.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -613,18 +795,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/roomequipment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-723" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/userrole.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
@@ -645,17 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/policies/InvoicePolicy.js">
+    <entry file="file://$PROJECT_DIR$/src/Middleware/policies/InvoicePolicy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -663,13 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/policies/RoomPolicy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="45" column="45" lean-forward="true" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -691,24 +847,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/migrations/20190504114722-create-user.js">
+    <entry file="file://$PROJECT_DIR$/src/Middleware/policies/UserPolicy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/policies/UserPolicy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
+        <state relative-caret-position="960">
           <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="45" lean-forward="true" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -721,15 +863,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/migrations/20190504171445-create-invoice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/ReservationController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="110" column="22" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
+        <state relative-caret-position="120">
+          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -740,27 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/UserController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/policies/IdRequire.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/InvoiceController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
@@ -768,6 +882,148 @@
           <folding>
             <element signature="e#742#1726#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/migrations/20190504114722-create-user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/user.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/migrations/20190504144604-DefaultValuesUserRoles.js" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="120">
+            <caret line="5" column="125" lean-forward="true" selection-start-line="5" selection-start-column="125" selection-end-line="5" selection-end-column="125" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/ReservationController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1536">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/migrations/20190512165506-permission for default users.js" />
+    <entry file="file://$PROJECT_DIR$/src/migrations/20190512143644-ReservationInvoicePremisssion.js" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/migrations/20190504121453-UserRoleAssociaction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/UserController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1416">
+          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/userrole.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/migrations/20190504121202-create-user-role.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/migrations/20190504172102-reservation invoice association.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" selection-start-line="11" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Middleware/policies/RoomPolicy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Middleware/Authorization/Roles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/migrations/20190514060319-default users and roles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/reservation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="51" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Middleware/IdRequire.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Middleware/Authorization/AuthorizeRole.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
         </state>
       </provider>
     </entry>

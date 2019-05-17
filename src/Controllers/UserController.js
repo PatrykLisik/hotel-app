@@ -5,8 +5,8 @@ const {
   UserRole
 } = require('../models')
 
-function jwtSignUser (user) {
-  return jwt.sign(user, config.authentication.secret, {
+function jwtSignUser (payload) {
+  return jwt.sign(payload, config.authentication.secret, {
     expiresIn: config.authentication.expire_time
   })
 }
@@ -50,11 +50,19 @@ module.exports = {
           error: 'password incorrect'
         })
       }
-
+      const role = await UserRole.findOne({
+        where: {
+          id: user.roleId
+        }
+      })
       const userJSON = user.toJSON()
+      const roleJSON = role.toJSON()
       res.send({
         user: userJSON,
-        token: jwtSignUser(userJSON)
+        token: jwtSignUser(
+          { userJSON, roleJSON }
+        ),
+        role: roleJSON
       })
     } catch (err) {
       res.status(500).send({

@@ -11,21 +11,6 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      CanViewAllUsers: {
-        type: Sequelize.BOOLEAN
-      },
-      CanCRUDRooms: {
-        type: Sequelize.BOOLEAN
-      },
-      CanViewAllReservations: {
-        type: Sequelize.BOOLEAN
-      },
-      CanEditAllReservations: {
-        type: Sequelize.BOOLEAN
-      },
-      CanAddRoles: {
-        type: Sequelize.BOOLEAN
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
