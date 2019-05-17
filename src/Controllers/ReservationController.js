@@ -86,8 +86,8 @@ module.exports = {
         })
       }
     }).catch(err => {
-      res.status(400).send({
-        error: "Update error"
+      res.status(500).send({
+        error: err.message
       })
     })
   },
