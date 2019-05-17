@@ -7,8 +7,8 @@ module.exports = (app) => {
   )
 
   const idPolicy = require('./Middleware/IdRequire.js')
-  const authorization = require('./Middleware/AuthorizeRole')
-  const RolesENUM = require('./Middleware/Roles')
+  const authorization = require('./Middleware/Authorization/AuthorizeRole')
+  const RolesENUM = require('./Middleware/Authorization/Roles')
 
   // User api
   const userController = require('./Controllers/UserController')

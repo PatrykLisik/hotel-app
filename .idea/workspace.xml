@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4818aa5-cad5-4bfe-a608-c05bd5cba189" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Middleware/Authorize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Middleware/AuthorizeRole.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Middleware/AuthorizeRole.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Middleware/Authorization/AuthorizeRole.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Middleware/Roles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Middleware/Authorization/Roles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,16 +24,16 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Middleware/AuthorizeRole.js">
+            <entry file="file://$PROJECT_DIR$/src/Middleware/Authorization/AuthorizeRole.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+                <state relative-caret-position="216">
+                  <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Middleware/Roles.js">
+            <entry file="file://$PROJECT_DIR$/src/Middleware/Authorization/Roles.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="72">
                   <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
@@ -109,8 +111,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/config/config.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
-                  <caret line="25" column="16" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="16" />
+                <state relative-caret-position="264">
+                  <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -188,6 +190,7 @@
         <option value="$PROJECT_DIR$/src/Middleware/policies/Roles.js" />
         <option value="$PROJECT_DIR$/src/Middleware/Authorize.js" />
         <option value="$PROJECT_DIR$/src/Middleware/AuthorizeRole.js" />
+        <option value="$PROJECT_DIR$/src/Middleware/Auuthorization/AuthorizeRole.js" />
       </list>
     </option>
   </component>
@@ -238,6 +241,13 @@
               <item name="E:\hotel-app" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="Middleware" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="hotel-app" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\hotel-app" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Middleware" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Authorization" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="hotel-app" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -308,6 +318,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\hotel-app\src\Middleware\Auuthorization" />
       <recent name="E:\hotel-app\src\Middleware" />
       <recent name="E:\hotel-app\src\migrations" />
     </key>
@@ -413,7 +424,7 @@
       <workItem from="1557571032714" duration="7855000" />
       <workItem from="1557654432832" duration="6103000" />
       <workItem from="1557811629359" duration="3343000" />
-      <workItem from="1558112282427" duration="2175000" />
+      <workItem from="1558112282427" duration="2907000" />
     </task>
     <task id="LOCAL-00001" summary="user update has same constraints as user create">
       <created>1557508462628</created>
@@ -590,11 +601,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557814568060</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="proper name to AuthorizeRole">
+      <created>1558114528974</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1558114528974</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68394000" />
+    <option name="totallyTimeSpent" value="69126000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -628,8 +646,8 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5002667" side_tool="true" weight="0.36566332" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49973333" visible="true" weight="0.2374582" />
-      <window_info anchor="bottom" id="Run Dashboard" order="12" sideWeight="0.49973333" weight="0.28762543" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49973333" weight="0.2374582" />
+      <window_info anchor="bottom" id="Run Dashboard" order="12" sideWeight="0.49973333" visible="true" weight="0.28762543" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32998884" />
       <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -689,7 +707,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="policy that requires id in request" />
     <MESSAGE value="package update" />
     <MESSAGE value="id is required in put, update and del requests" />
     <MESSAGE value="userCreationPolicy renamed to UserPolicy" />
@@ -714,7 +731,8 @@
     <MESSAGE value="run in postman buttons" />
     <MESSAGE value="creation of users moved to seed" />
     <MESSAGE value="user role simplified" />
-    <option name="LAST_COMMIT_MESSAGE" value="user role simplified" />
+    <MESSAGE value="proper name to AuthorizeRole" />
+    <option name="LAST_COMMIT_MESSAGE" value="proper name to AuthorizeRole" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -967,7 +985,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Middleware/Roles.js">
+    <entry file="file://$PROJECT_DIR$/src/Middleware/Authorization/Roles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
@@ -988,13 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Middleware/IdRequire.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1002,10 +1013,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Middleware/AuthorizeRole.js">
+    <entry file="file://$PROJECT_DIR$/src/config/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        <state relative-caret-position="264">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Middleware/Authorization/AuthorizeRole.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
         </state>
       </provider>
     </entry>

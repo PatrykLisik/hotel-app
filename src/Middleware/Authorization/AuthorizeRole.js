@@ -1,4 +1,4 @@
-const config = require('../config/config')
+const config = require('../../config/config')
 const jwt = require('jsonwebtoken')
 const secret = config.authentication.secret
 const RolesENUM = require('./Roles')
