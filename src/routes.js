@@ -12,30 +12,8 @@ module.exports = (app) => {
   const userApi = require('./Routes/users')
   app.use('/', userApi)
 
-  // Room api
-  const roomController = require('./Controllers/RoomController')
-  const roomPolicy = require('./Middleware/policies/RoomPolicy')
-
-  app.get('/room',
-    idPolicy.requireIdInBody,
-    roomController.getOne)
-  app.get('/room/all', roomController.getAll)
-
-  app.post('/room',
-    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
-    roomPolicy.create,
-    roomController.createOne)
-
-  app.put('/room',
-    idPolicy.requireIdInBody,
-    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
-    roomPolicy.update,
-    roomController.update)
-
-  app.delete('/room',
-    idPolicy.requireIdInBody,
-    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
-    roomController.delete)
+  const roomApi = require('./Routes/rooms')
+  app.use('/room', roomApi)
 
   // Reservation api
   const reservationController = require('./Controllers/ReservationController')
