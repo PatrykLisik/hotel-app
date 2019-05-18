@@ -1,7 +1,6 @@
 const config = require('../../config/config')
 const jwt = require('jsonwebtoken')
 const secret = config.authentication.secret
-const RolesENUM = require('./Roles')
 
 function getPayload (token) {
   // token  is like 'Bearer 131dada2314£3432...'
@@ -11,19 +10,19 @@ function getPayload (token) {
 
 module.exports = class AuthorizationBuilder {
   constructor () {
-    this.roles = []
-    this.belongingFucnticons = []
+    this.conditions = []
+    this.startCondition = () => { return true }
   }
-  requireRole (roles = []) {
-    if (typeof roles === 'string') {
-      roles = [roles]
-    }
-    this.roles = this.roles.concat(roles)
+  start (condition) {
+    this.startCondition = condition
     return this
   }
-
-  addBelongingFunction (func) {
-    this.belongingFucnticons.push(func)
+  or (condition) {
+    this.conditions.push([condition, 'or'])
+    return this
+  }
+  and (condition) {
+    this.conditions.push([condition, 'and'])
     return this
   }
 
@@ -42,21 +41,20 @@ module.exports = class AuthorizationBuilder {
         })
       }
 
-      const role = payload.roleJSON.name
+      let result = this.startCondition(payload, req)
 
-      if (role === RolesENUM.Admin) {
-        next()
+      for (let entry of this.conditions) {
+        const condition = entry[0]
+        const operator = entry[1]
+        if (operator === 'or') {
+          // eslint-disable-next-line no-undef
+          result = result || condition(payload, req)
+        } else {
+          result = result && condition(payload, req)
+        }
       }
 
-      this.belongingFucnticons.forEach(func => {
-        if (!func(payload, req)) {
-          return res.status(403).send({
-            error: 'You do not have permission to perform this action'
-          })
-        }
-      })
-
-      if (this.roles.includes(role)) {
+      if (result) {
         return next()
       }
       return res.status(403).json({ error: 'Permission denied' })

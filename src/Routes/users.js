@@ -1,6 +1,7 @@
 const idPolicy = require('../Middleware/IdRequire.js')
-const AuthorizationBuilder = require('../Middleware/Authorization/AuthorizationBuilder')
+const AuthorizationBuilder = require('../Middleware/Authorization/ConditionalAuthorizationBuilder')
 const RolesENUM = require('../Middleware/Authorization/Roles')
+const RoleBuilder = require('../Middleware/Authorization/AuthorizeRole')
 
 const express = require('express')
 const router = express.Router()
@@ -20,24 +21,25 @@ router.post('/user',
 router.post('/login', userController.login)
 
 // update
-const authorizeUpdate = new AuthorizationBuilder()
-  .requireRole(RolesENUM.User)
-  .addBelongingFunction(userBelongings.userUpdate)
+const belongsToUserOrRoleIsManager = new AuthorizationBuilder()
+  .start(RoleBuilder.requireRole(RolesENUM.User))
+  .and(userBelongings.userUpdate)
+  .or(RoleBuilder.requireRole(RolesENUM.Manager))
   .build()
 
 router.put('/user',
   idPolicy.requireIdInBody,
-  authorizeUpdate,
+  belongsToUserOrRoleIsManager,
   userCreationPolicy.update,
   userController.update)
 
 router.delete('/user',
   idPolicy.requireIdInBody,
-  authorizeUpdate,
+  belongsToUserOrRoleIsManager,
   userController.delete)
 
 const authorizeGetALL = new AuthorizationBuilder()
-  .requireRole(RolesENUM.Manager)
+  .start(RoleBuilder.requireRole(RolesENUM.Manager))
   .build()
 
 router.get('/user/all',
