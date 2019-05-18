@@ -3,42 +3,14 @@ module.exports = (app) => {
     res.send({
       message: 'test endpoint Hello World!'
     })
-  }
-  )
+  })
 
   const idPolicy = require('./Middleware/IdRequire.js')
   const authorization = require('./Middleware/Authorization/AuthorizeRole')
   const RolesENUM = require('./Middleware/Authorization/Roles')
 
-  // User api
-  const userController = require('./Controllers/UserController')
-  const userCreationPolicy = require('./Middleware/policies/UserPolicy')
-
-  app.post('/user',
-    userCreationPolicy.register,
-    userController.register
-  )
-
-  app.post('/login', userController.login)
-
-  app.put('/user',
-    idPolicy.requireIdInBody,
-    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
-    userCreationPolicy.update,
-    userController.update)
-
-  app.delete('/user',
-    idPolicy.requireIdInBody,
-    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
-    userController.delete)
-
-  app.get('/user/all',
-    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
-    userController.getAll)
-
-  app.get('/user',
-    authorization.authorizeRoleFactoryMethod([RolesENUM.Manager, RolesENUM.User]),
-    userController.getOne)
+  const userApi = require('./Routes/users')
+  app.use('/', userApi)
 
   // Room api
   const roomController = require('./Controllers/RoomController')
