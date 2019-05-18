@@ -18,14 +18,15 @@ module.exports = class AuthorizationBuilder {
     if (typeof roles === 'string') {
       roles = [roles]
     }
-    this.roles.concat(roles)
+    this.roles = this.roles.concat(roles)
     return this
   }
 
   addBelongingFunction (func) {
-    this.belongingFucnticons.add(func)
+    this.belongingFucnticons.push(func)
     return this
   }
+
   build () {
     return (req, res, next) => {
       if (!req.headers.authorization) {
@@ -48,7 +49,7 @@ module.exports = class AuthorizationBuilder {
       }
 
       this.belongingFucnticons.forEach(func => {
-        if (!func()) {
+        if (!func(payload, req)) {
           return res.status(403).send({
             error: 'You do not have permission to perform this action'
           })
