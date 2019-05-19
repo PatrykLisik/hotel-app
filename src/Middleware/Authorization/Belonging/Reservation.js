@@ -4,7 +4,7 @@ module.exports = {
     return tokenPayload.userJSON.id === req.body.clientId
   },
   reservationIdToUserFromToken (tokenPayload, req) {
-    Reservation.findOne({ where: {
+    return Reservation.findOne({ where: {
       id: req.body.id
     } }).then(reservation => {
       return reservation.clientId === tokenPayload.userJSON.id

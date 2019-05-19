@@ -27,7 +27,7 @@ module.exports = class AuthorizationBuilder {
   }
 
   build () {
-    return (req, res, next) => {
+    return async (req, res, next) => {
       if (!req.headers.authorization) {
         return res.status(403).json({ error: 'No credentials sent!' })
       }
@@ -41,16 +41,16 @@ module.exports = class AuthorizationBuilder {
         })
       }
 
-      let result = this.startCondition(payload, req)
+      let result = await this.startCondition(payload, req)
 
       for (let entry of this.conditions) {
         const condition = entry[0]
         const operator = entry[1]
         if (operator === 'or') {
           // eslint-disable-next-line no-undef
-          result = result || condition(payload, req)
+          result = result || await condition(payload, req)
         } else {
-          result = result && condition(payload, req)
+          result = result && await condition(payload, req)
         }
       }
 
