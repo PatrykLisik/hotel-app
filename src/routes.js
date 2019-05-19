@@ -15,30 +15,8 @@ module.exports = (app) => {
   const roomApi = require('./Routes/rooms')
   app.use('/room', roomApi)
 
-  // Reservation api
-  const reservationController = require('./Controllers/ReservationController')
-  app.post('/reservation',
-    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
-    reservationController.createOne)
-
-  app.get('/reservation/all',
-    authorization.authorizeRoleFactoryMethod(RolesENUM.Manager),
-    reservationController.getAll)
-
-  app.get('/reservation',
-    idPolicy.requireIdInBody,
-    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
-    reservationController.getOne)
-
-  app.put('/reservation',
-    idPolicy.requireIdInBody,
-    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
-    reservationController.update)
-
-  app.delete('/reservation',
-    idPolicy.requireIdInBody,
-    authorization.authorizeRoleFactoryMethod(RolesENUM.User),
-    reservationController.delete)
+  const reservationAPi = require('./Routes/reservations')
+  app.use('/reservation', reservationAPi)
 
   // Invoice api
   const invoiceController = require('./Controllers/InvoiceController')
