@@ -13,5 +13,16 @@ module.exports = {
         console.log(error.message)
         return false
       })
+  },
+  async reservationListToUser (tokenPayload, req) {
+    const reservations = await Reservation.findAll({ where: {
+      id: req.body.reservationIds
+    } })
+    for (const reservation of reservations) {
+      if (reservation.clientId !== tokenPayload.userJSON.id) {
+        return false
+      }
+    }
+    return true
   }
 }
