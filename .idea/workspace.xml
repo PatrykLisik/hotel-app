@@ -7,6 +7,7 @@
     <list default="true" id="e4818aa5-cad5-4bfe-a608-c05bd5cba189" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/users.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,8 +79,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Routes/users.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="51" selection-start-line="51" selection-end-line="51" />
+                <state relative-caret-position="264">
+                  <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
@@ -127,8 +128,14 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controllers/UserController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="439">
-                  <caret line="151" selection-start-line="151" selection-end-line="151" />
+                <state relative-caret-position="309">
+                  <caret line="163" column="10" lean-forward="true" selection-start-line="163" selection-start-column="10" selection-end-line="163" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#1614#2015#0" />
+                    <element signature="e#2044#2429#0" />
+                    <element signature="e#2458#2606#0" />
+                    <element signature="e#2635#2973#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -221,8 +228,8 @@
         <option value="$PROJECT_DIR$/src/Middleware/Authorization/Belonging/Invoice.js" />
         <option value="$PROJECT_DIR$/src/Routes/invoices.js" />
         <option value="$PROJECT_DIR$/src/routes.js" />
-        <option value="$PROJECT_DIR$/src/Routes/users.js" />
         <option value="$PROJECT_DIR$/src/Controllers/UserController.js" />
+        <option value="$PROJECT_DIR$/src/Routes/users.js" />
       </list>
     </option>
   </component>
@@ -454,7 +461,10 @@
       <workItem from="1559168440716" duration="599000" />
       <workItem from="1560879950557" duration="3793000" />
       <workItem from="1560936467667" duration="2168000" />
-      <workItem from="1560939029293" duration="54000" />
+      <workItem from="1560939029293" duration="1331000" />
+      <workItem from="1560945487576" duration="2866000" />
+      <workItem from="1560955715688" duration="596000" />
+      <workItem from="1560961221992" duration="177000" />
     </task>
     <task id="LOCAL-00001" summary="user update has same constraints as user create">
       <created>1557508462628</created>
@@ -715,11 +725,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560939059187</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="get all roles endpoint">
+      <created>1560939093215</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1560939093215</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120474000" />
+    <option name="totallyTimeSpent" value="125390000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1194,17 +1211,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Routes/users.js">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/UserController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="309">
+          <caret line="163" column="10" lean-forward="true" selection-start-line="163" selection-start-column="10" selection-end-line="163" selection-end-column="10" />
+          <folding>
+            <element signature="e#1614#2015#0" />
+            <element signature="e#2044#2429#0" />
+            <element signature="e#2458#2606#0" />
+            <element signature="e#2635#2973#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/UserController.js">
+    <entry file="file://$PROJECT_DIR$/src/Routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        <state relative-caret-position="264">
+          <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
         </state>
       </provider>
     </entry>
