@@ -142,5 +142,15 @@ module.exports = {
         error: err
       })
     })
+  },
+  async getRoles (req, res) {
+    UserRole.findAll()
+      .then(roles => {
+        res.send(roles)
+      }).catch(err => {
+        res.status(500).send({
+          error: err.message
+        })
+      })
   }
 }

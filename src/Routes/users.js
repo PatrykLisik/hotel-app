@@ -50,4 +50,6 @@ router.get('/user',
   // authorization.authorizeRoleFactoryMethod([RolesENUM.Manager, RolesENUM.User]),
   userController.getOne)
 
+router.get('/user/roles', userController.getRoles)
+
 module.exports = router
