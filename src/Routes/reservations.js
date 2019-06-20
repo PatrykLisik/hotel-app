@@ -48,4 +48,7 @@ router.delete('/',
   reservationBelongsToUser,
   reservationController.delete)
 
+router.get('/room',
+  reservationController.getReservationsOfRoom)
+
 module.exports = router
