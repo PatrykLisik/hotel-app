@@ -38,8 +38,8 @@ module.exports = {
 
   async createOne (req, res) {
     try {
-      const roomEQ = RoomEquipment.findOrCreate(req.body.roomEquipment)
-      req.body['roomEquipmentsId'] = roomEQ.id
+      const roomEQ = await RoomEquipment.findOrCreate({ where: req.body.roomEquipment })
+      req.body['roomEquipmentsId'] = roomEQ[0].dataValues.id
       const room = await Room.create(req.body)
       if (!room) {
         return res.status(400).send({
@@ -49,31 +49,40 @@ module.exports = {
       res.send(room.toJSON())
     } catch (err) {
       res.status(500).send({
-        error: err
+        error: err.message
       })
     }
   },
 
   async update (req, res) {
-    Room.update(req.body.update, {
-      where: {
-        id: req.body.id
-      }
-    }).then(result => {
-      if (result[0] === 1) {
-        res.send({
-          message: 'successful update'
-        })
-      } else {
-        res.status(400).send({
-          message: 'unsuccessful update'
-        })
-      }
-    }).catch(err => {
-      res.status(400).send({
-        error: err
+    RoomEquipment.findOrCreate({ where: req.body.update.roomEquipment })
+      .then(roomEQ => {
+        return roomEQ[0].dataValues.id
       })
-    })
+      .then((roomEQId) => {
+        req.body['roomEquipmentsId'] = roomEQId
+        return Room.update(req.body.update, {
+          where: {
+            id: req.body.id
+          }
+        })
+      })
+      .then(result => {
+        if (result[0] === 1) {
+          res.send({
+            message: 'successful update'
+          })
+        } else {
+          res.status(400).send({
+            message: 'unsuccessful update'
+          })
+        }
+      })
+      .catch(err => {
+        res.status(400).send({
+          error: err.message
+        })
+      })
   },
 
   async delete (req, res) {

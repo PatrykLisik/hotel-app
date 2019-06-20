@@ -6,7 +6,14 @@ const schema = Joi.object().keys({
   peopleNumber: Joi.number().integer().positive(),
   type: Joi.string(),
   cost: Joi.number().positive().precision(2),
-  roomArea: Joi.number().integer().positive().greater(10)
+  roomArea: Joi.number().integer().positive().greater(10),
+  roomEquipment: Joi.object().keys({
+    teapot: Joi.bool().required(),
+    tv: Joi.bool().required(),
+    balcony: Joi.bool().required(),
+    fridge: Joi.bool().required(),
+    freeBeverages: Joi.bool().required()
+  })
 })
 
 function errorDispatcher (error, res) {
@@ -34,7 +41,7 @@ module.exports = {
 
     if (error) {
       res.status(400).send({
-        error: errorDispatcher(error)
+        error: error
       })
     } else {
       next()
@@ -47,7 +54,7 @@ module.exports = {
 
     if (error) {
       res.status(400).send({
-        error: errorDispatcher(error)
+        error: error
       })
     } else {
       next()
