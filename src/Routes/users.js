@@ -12,7 +12,7 @@ const userCreationPolicy = require('../Middleware/policies/UserPolicy')
 const userBelongings = require('../Middleware/Authorization/Belonging/UserBelonging')
 
 // create new user
-router.post('/user',
+router.post('/register',
   userCreationPolicy.register,
   userController.register
 )
@@ -38,16 +38,25 @@ router.delete('/user',
   belongsToUserOrRoleIsManager,
   userController.delete)
 
-const authorizeGetALL = new AuthorizationBuilder()
+const isManager = new AuthorizationBuilder()
   .start(RoleBuilder.requireRole(RolesENUM.Manager))
   .build()
 
 router.get('/user/all',
-  authorizeGetALL,
+  isManager,
   userController.getAll)
+
+// create new user
+router.post('/user',
+  isManager,
+  userCreationPolicy.register,
+  userController.register
+)
 
 router.get('/user',
   // authorization.authorizeRoleFactoryMethod([RolesENUM.Manager, RolesENUM.User]),
   userController.getOne)
+
+router.get('/user/roles', userController.getRoles)
 
 module.exports = router
