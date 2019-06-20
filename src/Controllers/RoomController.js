@@ -1,5 +1,6 @@
 const {
-  Room
+  Room,
+  RoomEquipment
 } = require('../models')
 
 module.exports = {
@@ -37,6 +38,8 @@ module.exports = {
 
   async createOne (req, res) {
     try {
+      const roomEQ = RoomEquipment.findOrCreate(req.body.roomEquipment)
+      req.body['roomEquipmentsId'] = roomEQ.id
       const room = await Room.create(req.body)
       if (!room) {
         return res.status(400).send({
