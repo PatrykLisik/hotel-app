@@ -17,8 +17,6 @@ router.post('/register',
   userController.register
 )
 
-
-
 // log in existing user
 router.post('/login', userController.login)
 
