@@ -24,7 +24,7 @@ module.exports = {
       res.send(user.toJSON())
     } catch (err) {
       res.status(400).send({
-        error: err
+        error: err.message
       })
     }
   },
@@ -44,7 +44,7 @@ module.exports = {
       }
 
       const password = req.body.password
-      const isPasswordValid = user.comparePassword(password)
+      const isPasswordValid = await user.comparePassword(password)
       if (!isPasswordValid) {
         return res.status(403).send({
           error: 'password incorrect'
@@ -74,8 +74,10 @@ module.exports = {
     User.update(req.body.update, {
       where: {
         id: req.body.id
-      }
-    }).then(result => {
+      },
+      individualHooks: true
+    }
+    ).then(result => {
       if (result[0] === 1) {
         res.send({
           message: 'successful update'
