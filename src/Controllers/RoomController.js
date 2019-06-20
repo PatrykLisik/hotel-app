@@ -60,7 +60,7 @@ module.exports = {
         return roomEQ[0].dataValues.id
       })
       .then((roomEQId) => {
-        req.body['roomEquipmentsId'] = roomEQId
+        req.body.update['roomEquipmentsId'] = roomEQId
         return Room.update(req.body.update, {
           where: {
             id: req.body.id
