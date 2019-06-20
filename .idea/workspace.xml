@@ -7,7 +7,6 @@
     <list default="true" id="e4818aa5-cad5-4bfe-a608-c05bd5cba189" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/RoomController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RoomController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Middleware/policies/RoomPolicy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Middleware/policies/RoomPolicy.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +60,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controllers/RoomController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="199">
-                  <caret line="62" column="54" lean-forward="true" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
+                <state relative-caret-position="384">
+                  <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
@@ -130,20 +129,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Middleware/Authorization/ConditionalAuthorizationBuilder.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="477">
-                  <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+                <state relative-caret-position="69">
+                  <caret line="43" column="35" lean-forward="true" selection-start-line="42" selection-end-line="43" selection-end-column="35" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Routes/rooms.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="151">
-                  <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+                <state relative-caret-position="-216">
+                  <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -299,7 +298,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -546,7 +545,7 @@
       <workItem from="1560961221992" duration="5165000" />
       <workItem from="1561010193451" duration="1461000" />
       <workItem from="1561014595218" duration="7391000" />
-      <workItem from="1561040912437" duration="6025000" />
+      <workItem from="1561040912437" duration="8549000" />
     </task>
     <task id="LOCAL-00001" summary="user update has same constraints as user create">
       <created>1557508462628</created>
@@ -877,11 +876,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561047922634</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="not updating room equipment id fixed">
+      <created>1561048475027</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1561048475027</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145255000" />
+    <option name="totallyTimeSpent" value="147779000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -893,10 +899,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.57365686" visible="true" weight="0.1975764" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.57365686" visible="true" weight="0.1975764" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -916,7 +922,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50105375" side_tool="true" weight="0.33883387" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49973333" weight="0.5181518" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="12" sideWeight="0.49894625" visible="true" weight="0.35533553" />
+      <window_info anchor="bottom" id="Run Dashboard" order="12" sideWeight="0.49894625" visible="true" weight="0.35533553" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32893288" />
       <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1022,7 +1028,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reservations authorization" />
     <MESSAGE value="invoice authorization" />
     <MESSAGE value="factory methods returns, small reformat in routes" />
     <MESSAGE value="default users migration is done last" />
@@ -1047,7 +1052,8 @@
     <MESSAGE value="get reservation of room" />
     <MESSAGE value="user policy refactor" />
     <MESSAGE value="new room create and update" />
-    <option name="LAST_COMMIT_MESSAGE" value="new room create and update" />
+    <MESSAGE value="not updating room equipment id fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="not updating room equipment id fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1059,33 +1065,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Controllers/RoomController.js</url>
-          <line>40</line>
+          <line>50</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Controllers/RoomController.js</url>
-          <line>57</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Controllers/RoomController.js</url>
-          <line>59</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Controllers/RoomController.js</url>
-          <line>62</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Controllers/RoomController.js</url>
-          <line>70</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1359,13 +1341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Routes/rooms.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Middleware/policies/UserPolicy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1413,15 +1388,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Middleware/Authorization/ConditionalAuthorizationBuilder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+        <state relative-caret-position="69">
+          <caret line="43" column="35" lean-forward="true" selection-start-line="42" selection-end-line="43" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Routes/rooms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/RoomController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="62" column="54" lean-forward="true" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
+        <state relative-caret-position="384">
+          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
         </state>
       </provider>
     </entry>

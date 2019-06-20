@@ -5,14 +5,21 @@ const {
 
 module.exports = {
   async getAll (req, res) {
-    try {
-      const rooms = await Room.findAll()
-      res.send(rooms)
-    } catch (err) {
-      res.status(400).send({
-        error: err
+    Room.findAll(
+      {
+        include: [{
+          model: RoomEquipment
+        }]
+      }
+    )
+      .then(rooms => {
+        res.send(rooms)
       })
-    }
+      .catch(error => {
+        res.status(400).send({
+          error: error.message
+        })
+      })
   },
 
   async getOne (req, res) {
@@ -21,7 +28,10 @@ module.exports = {
       const room = await Room.findOne({
         where: {
           id: id
-        }
+        },
+        include: [{
+          model: RoomEquipment
+        }]
       })
       if (!room) {
         return res.status(400).send({
