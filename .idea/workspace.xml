@@ -24,8 +24,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controllers/RoomController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="384">
-                  <caret line="19" column="81" lean-forward="true" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="81" />
+                <state relative-caret-position="333">
+                  <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
@@ -492,14 +492,7 @@
       <workItem from="1560961221992" duration="5165000" />
       <workItem from="1561010193451" duration="1461000" />
       <workItem from="1561014595218" duration="7391000" />
-      <workItem from="1561040912437" duration="14788000" />
-    </task>
-    <task id="LOCAL-00001" summary="user update has same constraints as user create">
-      <created>1557508462628</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1557508462628</updated>
+      <workItem from="1561040912437" duration="15524000" />
     </task>
     <task id="LOCAL-00002" summary="policy that requires id in request">
       <created>1557509432001</created>
@@ -837,11 +830,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561072009386</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="wrong room equipment in room bug solved in blunt way">
+      <created>1561079436275</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1561079436276</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154018000" />
+    <option name="totallyTimeSpent" value="154754000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -946,7 +946,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="factory methods returns, small reformat in routes" />
     <MESSAGE value="default users migration is done last" />
     <MESSAGE value="run in postman buttons" />
     <MESSAGE value="creation of users moved to seed" />
@@ -971,7 +970,8 @@
     <MESSAGE value="new room create and update" />
     <MESSAGE value="not updating room equipment id fixed" />
     <MESSAGE value="room endpoints includes equipment" />
-    <option name="LAST_COMMIT_MESSAGE" value="room endpoints includes equipment" />
+    <MESSAGE value="wrong room equipment in room bug solved in blunt way" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrong room equipment in room bug solved in blunt way" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1336,8 +1336,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/RoomController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="19" column="81" lean-forward="true" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="81" />
+        <state relative-caret-position="333">
+          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
         </state>
       </provider>
     </entry>

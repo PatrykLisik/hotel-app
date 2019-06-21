@@ -48,7 +48,7 @@ module.exports = {
         })
       }
       const roomJson = room.toJSON()
-      roomJson['RoomEquipment'] = roomEQ.toJSON()
+      roomJson['roomEquipment'] = roomEQ.toJSON()
       res.send(roomJson)
     } catch (err) {
       res.status(500).send({
