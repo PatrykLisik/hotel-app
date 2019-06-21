@@ -5,15 +5,22 @@ const {
 
 module.exports = {
   async getAll (req, res) {
-    Room.findAll(
-      {
-        include: [{
-          model: RoomEquipment
-        }]
-      }
-    )
+    const RoomEQ = await RoomEquipment.findAll()
+    let RoomEQIdToRoomEQ = {}
+    for (let i = 0; i < RoomEQ.length; i++) {
+      const eq = RoomEQ[i]
+      RoomEQIdToRoomEQ[eq.id] = eq.toJSON()
+    }
+    Room.findAll()
       .then(rooms => {
-        res.send(rooms)
+        let roomsTable = []
+        for (let i = 0; i < rooms.length; i++) {
+          const room = rooms[i]
+          let roomJSON = room.toJSON()
+          roomJSON['roomEquipment'] = RoomEQIdToRoomEQ[roomJSON.roomEquipmentsId]
+          roomsTable.push(roomJSON)
+        }
+        res.send(roomsTable)
       })
       .catch(error => {
         res.status(400).send({
@@ -28,17 +35,21 @@ module.exports = {
       const room = await Room.findOne({
         where: {
           id: id
-        },
-        include: [{
-          model: RoomEquipment
-        }]
+        }
+      })
+      const roomEQ = await RoomEquipment.findOne({
+        where: {
+          id: room.roomEquipmentsId
+        }
       })
       if (!room) {
         return res.status(400).send({
           error: 'id incorrect'
         })
       }
-      res.send(room.toJSON())
+      const roomJson = room.toJSON()
+      roomJson['RoomEquipment'] = roomEQ.toJSON()
+      res.send(roomJson)
     } catch (err) {
       res.status(500).send({
         error: err
@@ -56,7 +67,9 @@ module.exports = {
           error: 'room data incorrect'
         })
       }
-      res.send(room.toJSON())
+      const roomJson = room.toJSON()
+      roomJson['roomEquipment'] = roomEQ.toJSON()
+      res.send(roomJson)
     } catch (err) {
       res.status(500).send({
         error: err.message
