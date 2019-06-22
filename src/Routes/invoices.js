@@ -42,7 +42,7 @@ router.get('/',
   belongsToUserOrIsManager,
   invoiceController.getOne)
 
-router.get('/user',
+router.get('/client',
   invoiceController.getInvoicesOfUser)
 
 router.delete('/',

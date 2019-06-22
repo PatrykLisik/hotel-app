@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e4818aa5-cad5-4bfe-a608-c05bd5cba189" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ReservationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ReservationController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/invoices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/invoices.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,14 +18,14 @@
     <favorites_list name="hotel-app" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.28168088">
+    <splitter split-orientation="horizontal" split-proportion="0.43795142">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controllers/RoomController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1008">
-                  <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+                <state relative-caret-position="312">
+                  <caret line="106" column="10" lean-forward="true" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -43,11 +43,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Controllers/ReservationController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="223">
-                  <caret line="131" column="14" lean-forward="true" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
+                <state relative-caret-position="199">
+                  <caret line="130" selection-start-line="130" selection-end-line="140" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
@@ -55,8 +55,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Routes/invoices.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="189">
-                  <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+                <state relative-caret-position="213">
+                  <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -70,11 +70,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controllers/InvoiceController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+                <state relative-caret-position="271">
+                  <caret line="101" column="46" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="46" />
                 </state>
               </provider>
             </entry>
@@ -175,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/migrations/20190504171445-create-invoice.js" />
         <option value="$PROJECT_DIR$/src/models/invoice.js" />
         <option value="$PROJECT_DIR$/src/policies/IdRequire.js" />
-        <option value="$PROJECT_DIR$/src/Controllers/InvoiceController.js" />
         <option value="$PROJECT_DIR$/src/migrations/20190512143644-new permissions.js" />
         <option value="$PROJECT_DIR$/src/migrations/20190512143644-CanCRUDUsersPremisssion.js" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -213,8 +212,9 @@
         <option value="$PROJECT_DIR$/src/Controllers/RoomController.js" />
         <option value="$PROJECT_DIR$/src/Routes/rooms.js" />
         <option value="$PROJECT_DIR$/src/Routes/reservations.js" />
-        <option value="$PROJECT_DIR$/src/Routes/invoices.js" />
         <option value="$PROJECT_DIR$/src/Controllers/ReservationController.js" />
+        <option value="$PROJECT_DIR$/src/Controllers/InvoiceController.js" />
+        <option value="$PROJECT_DIR$/src/Routes/invoices.js" />
       </list>
     </option>
   </component>
@@ -237,9 +237,10 @@
   </component>
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
-      <showMembers ProjectPane="true" />
-      <autoscrollToSource ProjectPane="true" />
-      <autoscrollFromSource ProjectPane="true" />
+      <showMembers Scope="false" ProjectPane="true" />
+      <compactDirectories Scope="false" />
+      <autoscrollToSource Scope="true" ProjectPane="true" />
+      <autoscrollFromSource Scope="true" ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -461,21 +462,7 @@
       <workItem from="1561040912437" duration="18812000" />
       <workItem from="1561104472114" duration="3791000" />
       <workItem from="1561160433466" duration="1724000" />
-      <workItem from="1561189390897" duration="5206000" />
-    </task>
-    <task id="LOCAL-00006" summary="room request validation">
-      <created>1557559081390</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1557559081390</updated>
-    </task>
-    <task id="LOCAL-00007" summary="consistent names in db">
-      <created>1557560651951</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1557560651951</updated>
+      <workItem from="1561189390897" duration="10159000" />
     </task>
     <task id="LOCAL-00008" summary="invoice date fix">
       <created>1557562905126</created>
@@ -806,11 +793,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561212740537</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="get all client reservation endpoint now returns proper reservations">
+      <created>1561213410591</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1561213410591</updated>
+    </task>
+    <task id="LOCAL-00056" summary="get all invoices of client">
+      <created>1561228297792</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1561228297792</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168763000" />
+    <option name="totallyTimeSpent" value="173716000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -915,8 +916,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="proper name to AuthorizeRole" />
-    <MESSAGE value="authorization builder" />
     <MESSAGE value="user api moved to separate file" />
     <MESSAGE value="authorize builder works properly" />
     <MESSAGE value="conditional authorization and user middleware implementation" />
@@ -940,7 +939,9 @@
     <MESSAGE value="roomEQ api fix" />
     <MESSAGE value="getReservation of client endpoint" />
     <MESSAGE value="invoice api fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="invoice api fixes" />
+    <MESSAGE value="get all client reservation endpoint now returns proper reservations" />
+    <MESSAGE value="get all invoices of client" />
+    <option name="LAST_COMMIT_MESSAGE" value="get all invoices of client" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -962,16 +963,16 @@
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Controllers/InvoiceController.js</url>
-          <line>34</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Middleware/policies/InvoicePolicy.js</url>
           <line>5</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Controllers/InvoiceController.js</url>
+          <line>118</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1261,20 +1262,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/RoomController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/InvoiceController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1296,13 +1283,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Routes/invoices.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Routes/reservations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -1312,8 +1292,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/ReservationController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="131" column="14" lean-forward="true" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
+        <state relative-caret-position="199">
+          <caret line="130" selection-start-line="130" selection-end-line="140" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Routes/invoices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/InvoiceController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="101" column="46" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/RoomController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="106" column="10" lean-forward="true" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
         </state>
       </provider>
     </entry>
