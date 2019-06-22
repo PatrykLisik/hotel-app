@@ -9,8 +9,9 @@ const router = express.Router()
 const invoiceController = require('../Controllers/InvoiceController')
 const invoicePolicy = require('../Middleware/policies/InvoicePolicy')
 const invoiceBelonging = require('../Middleware/Authorization/Belonging/Invoice')
-const isUser = new AuthorizationBuilder()
-  .start(RoleBuilder.requireRole(RolesENUM.Manager))
+const isUserOrManager = new AuthorizationBuilder()
+  .start(RoleBuilder.requireRole(RolesENUM.User))
+  .or(RoleBuilder.requireRole(RolesENUM.Manager))
   .build()
 
 const isManager = new AuthorizationBuilder()
@@ -23,25 +24,25 @@ const belongsToUserOrIsManager = new AuthorizationBuilder()
   .or(RoleBuilder.requireRole(RolesENUM.Manager))
   .build()
 
-router.post('/invoice',
+router.post('/',
   invoicePolicy.create,
-  isUser,
+  isUserOrManager,
   invoiceController.create)
 
-router.post('/invoice/pay',
+router.post('/pay',
   idPolicy.requireIdInBody,
   invoiceController.markAsPaid)
 
-router.get('/invoice/all',
+router.get('/all',
   isManager,
   invoiceController.getAll)
 
-router.get('/invoice',
+router.get('/',
   idPolicy.requireIdInBody,
   belongsToUserOrIsManager,
   invoiceController.getOne)
 
-router.delete('/invoice',
+router.delete('/',
   idPolicy.requireIdInBody,
   isManager,
   invoiceController.delete)
