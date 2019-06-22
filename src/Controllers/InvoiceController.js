@@ -114,6 +114,30 @@ module.exports = {
       .catch((err) => {
         res.status(400).send(err)
       })
+  },
+  async getInvoicesOfUser (req, res) {
+    const InvoiceIds = await Reservation.findAll({
+      where: {
+        clientId: req.query.clientId
+      },
+      attributes: ['invoiceId'],
+      distinct: true
+    })
+    let ids = []
+    for (let i = 0; i < InvoiceIds.length; i++) {
+      ids.push(InvoiceIds[i].invoiceId)
+    }
+    Invoice.findAll({
+      where: {
+        id: ids
+      }
+    }).then(invoices => {
+      res.send(invoices)
+    }).catch(error => {
+      res.status(400).send({
+        error: error.message
+      })
+    })
   }
 
 }

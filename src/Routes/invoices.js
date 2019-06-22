@@ -42,6 +42,9 @@ router.get('/',
   belongsToUserOrIsManager,
   invoiceController.getOne)
 
+router.get('/user',
+  invoiceController.getInvoicesOfUser)
+
 router.delete('/',
   idPolicy.requireIdInBody,
   isManager,
