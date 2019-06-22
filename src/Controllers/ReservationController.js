@@ -130,7 +130,7 @@ module.exports = {
   async getReservationsOfClient (req, res) {
     Reservation.findAll({
       where: {
-        roomId: req.query.clientId
+        clientId: req.query.clientId
       }
     }).then(reservations => {
       res.send(reservations)
