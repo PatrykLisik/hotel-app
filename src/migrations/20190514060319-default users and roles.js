@@ -37,21 +37,21 @@ module.exports = {
     return User.bulkCreate([{
       firstName: 'user',
       lastName: 'user',
-      email: 'user@user',
+      email: 'user@user.com',
       password: 'user',
       roleId: userRole.id
     },
     {
       firstName: 'manager',
       lastName: 'manager',
-      email: 'manager@manager',
+      email: 'manager@manager.com',
       password: 'manager',
       roleId: managerRole.id
     },
     {
       firstName: 'admin',
       lastName: 'admin',
-      email: 'admin@admin',
+      email: 'admin@admin.com',
       password: 'admin',
       roleId: adminRole.id
     }
