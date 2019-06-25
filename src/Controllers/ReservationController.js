@@ -112,6 +112,33 @@ module.exports = {
         error: err
       })
     })
+  },
+
+  async getReservationsOfRoom (req, res) {
+    Reservation.findAll({
+      where: {
+        roomId: req.query.id
+      }
+    }).then(reservations => {
+      res.send(reservations)
+    }).catch(error => {
+      res.status(400).send({
+        error: error.message
+      })
+    })
+  },
+  async getReservationsOfClient (req, res) {
+    Reservation.findAll({
+      where: {
+        clientId: req.query.clientId
+      }
+    }).then(reservations => {
+      res.send(reservations)
+    }).catch(error => {
+      res.status(400).send({
+        error: error.message
+      })
+    })
   }
 
 }
